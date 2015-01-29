@@ -20,6 +20,8 @@ class HomeController < ApplicationController
     token = User.find_by(id: session[:user_id]).token
     response = HTTParty.get("https://api.instagram.com/v1/users/self/media/liked?access_token=#{token}&count=200&max_id=123456")
     @lovely = response.parsed_response["data"]
+    response2 = HTTParty.get("https://api.instagram.com/v1/users/self/media/liked?access_token=7351433.9001143.1cfa1623eb5f4388828007c832ce25f9&count=200&max_like_id=906901934580671634&max_id=123456")
+    @lovelys = response2.parsed_response['data']
   end
 
 
