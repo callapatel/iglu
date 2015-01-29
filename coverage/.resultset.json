@@ -284,15 +284,12 @@
         null,
         1,
         1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
         0,
+        null,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null,
@@ -301,9 +298,17 @@
       "/Users/callapatel/Desktop/ADA/iglu/app/models/user.rb": [
         1,
         1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
         null
       ]
     },
-    "timestamp": 1422492697
+    "timestamp": 1422559539
   }
 }

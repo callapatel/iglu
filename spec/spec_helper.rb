@@ -34,7 +34,7 @@ RSpec.configure do |config|
     # The mock_auth configuration allows you to set per-provider (or default) authentication  hashes to return during testing.
 
     OmniAuth.config.mock_auth[:instagram] = OmniAuth::AuthHash.new({
-      credentials: {token: '123456'}, uid: '123456', username: 'calla', info: {email: "a@b.com", name: "Calla"}})
+      credentials: {token: '123'}, uid: '123456', username: 'calla', info: {name: "Calla"}})
   end
 
   # rspec-expectations config goes here. You can use an alternate
