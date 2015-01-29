@@ -5,16 +5,20 @@ class HomeController < ApplicationController
 
   def create
     auth_hash = request.env['omniauth.auth']
-    User.create(
-      name: auth_hash['info']['name'],
-      uid: auth_hash['uid'],
-      token: auth_hash["credentials"]['token'],
-    )
+    @user = User.where(uid: auth_hash['uid']).first
+    if @user == nil
+      User.createuser_from_omniauth(auth_hash)
+      session[:user_id] = @user.id
+    else
+      session[:user_id] = @user.id
+    end
+    raise
     redirect_to root_path
+
   end
 
   def login
 
   end
-  
+
 end
