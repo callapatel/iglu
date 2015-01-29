@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
   get "/home/index",                to:"home#index",        as: :login
-  get "/home/login",                to:"home#login",        as: :root #could be a partial. 
 
   get "/auth/:provider",            to: "home#create",      as: :connect
   get "/auth/:provider/callback",   to: "home#create"
 
   get "/logout",                    to: "home#destroy", as: :logout
+
+  get "/users/self/media/liked", to: "home#login", as: :root
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,1 +1,4 @@
-You are in! 
+You are in!
+<% @lovely.each do |n|%>
+<%= image_tag("#{n['images']['standard_resolution']['url']}")%>
+<% end %>
