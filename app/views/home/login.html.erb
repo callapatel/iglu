@@ -1,10 +1,13 @@
-You are in!
+
+<div class="scroll">
 <% @lovely.each do |n|%>
 <%= image_tag("#{n['images']['standard_resolution']['url']}")%>
 
 <% end %>
 
-<% @lovelys.each do |n|%>
-<%= image_tag("#{n['images']['standard_resolution']['url']}")%>
 
-<% end %>
+
+
+<%= link_to "next", "#{@next}" %>
+
+</div>
