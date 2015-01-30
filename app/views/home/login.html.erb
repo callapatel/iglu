@@ -1,7 +1,7 @@
 
 <div class="scroll">
-<% @lovely.each do |n|%>
-<%= image_tag("#{n['images']['standard_resolution']['url']}")%>
+<% @photos.each do |n|%>
+<%= image_tag("#{n.url}")%>
 
 <% end %>
 
