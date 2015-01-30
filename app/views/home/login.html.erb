@@ -1,12 +1,11 @@
 
 <div class="scroll">
-<% @photos.each do |n|%>
-<%= image_tag("#{n.url}")%>
-<%= n.lat %>
-<%= n.long %>
-<%= n.loc_name %> 
-
-<% end %>
+  <% @photos.each do |n|%>
+    <%= image_tag("#{n.url}")%>
+    <%= n.lat %>
+    <%= n.long %>
+    <%= n.loc_name %>
+  <% end %>
 
 
 
