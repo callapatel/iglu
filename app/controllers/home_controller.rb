@@ -19,17 +19,22 @@ class HomeController < ApplicationController
   def login
     token = User.find_by(id: session[:user_id]).token
     @photos = Photo.all
-    #response = HTTParty.get("https://api.instagram.com/v1/users/self/media/liked?access_token=#{token}&count=200&max_id=123456")
-    #@lovely = response.parsed_response["data"]
-    #@next = response.parsed_response['pagination']['next_url']
     response = HTTParty.get("https://api.instagram.com/v1/users/self/media/liked?access_token=#{token}&count=200&max_id=123456")
 
 
     3.times do
       @lovely = response.parsed_response["data"]
       @lovely.each do |n|
-        @welcome = n['images']['standard_resolution']['url']
-        Photo.find_or_create_by(url: "#{@welcome}", user: session[:user_id])
+
+        welcome = n['images']['standard_resolution']['url']
+        if n['location']
+          location_name = n['location']['name']
+          location_latitude = n['location']['latitude']
+          location_longitude = n['location']['longitude']
+          Photo.find_or_create_by(url: "#{welcome}", user: session[:user_id], loc_name: "#{location_name}", lat: "#{location_latitude}" , long: "#{location_longitude}")
+        else
+          Photo.find_or_create_by(url: "#{welcome}", user: session[:user_id])    
+        end
       end
       @next = response.parsed_response['pagination']['next_url']
       response = HTTParty.get("#{@next}")
