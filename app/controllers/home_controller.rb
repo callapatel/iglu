@@ -29,7 +29,7 @@ class HomeController < ApplicationController
       @lovely = response.parsed_response["data"]
       @lovely.each do |n|
         @welcome = n['images']['standard_resolution']['url']
-        Photo.create(url: "#{@welcome}")
+        Photo.find_or_create_by(url: "#{@welcome}", user: session[:user_id])
       end
       @next = response.parsed_response['pagination']['next_url']
       response = HTTParty.get("#{@next}")
