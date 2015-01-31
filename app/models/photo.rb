@@ -8,14 +8,15 @@ class Photo < ActiveRecord::Base
       @lovely = response.parsed_response["data"]
       @lovely.each do |n|
         welcome = n['images']['standard_resolution']['url']
-        if n['location']
+        if n['location'] && n['caption']
           location_name = n['location']['name']
           location_latitude = n['location']['latitude']
           location_longitude = n['location']['longitude']
-          #caption = n['caption']['text']
-          Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, loc_name: "#{location_name}", lat: "#{location_latitude}" , long: "#{location_longitude}")
+          caption = n['caption']['text']
+          ig_user = n['caption']['from']['username']
+          Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, loc_name: "#{location_name}", lat: "#{location_latitude}" , long: "#{location_longitude}", caption: "#{caption}", ig_user: "#{ig_user}")
         else
-          Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm)
+          Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, caption: "#{caption}", ig_user: "#{ig_user}" )
         end
       end
       @next = response.parsed_response['pagination']['next_url']
