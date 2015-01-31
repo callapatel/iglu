@@ -1,13 +1,21 @@
 
 <div class="scroll">
+  <ul class="rig columns-3">
+
   <% @photos.each do |n|%>
+  <li>
+  <div class = 'imagesize'>
     <%= image_tag("#{n.url}")%>
-    <%= n.lat %>
-    <%= n.long %>
-    <%= n.loc_name %>
+  </div>
+    </br>
+    <%= n.lat %></br>
+    <%= n.long %></br>
+    <%= n.loc_name %></br>
+    <%= n.caption %></br>
+  </li>
   <% end %>
 
-
+</ul> 
 
 
 

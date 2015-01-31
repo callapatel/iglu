@@ -12,6 +12,7 @@ class Photo < ActiveRecord::Base
           location_name = n['location']['name']
           location_latitude = n['location']['latitude']
           location_longitude = n['location']['longitude']
+          #caption = n['caption']['text']
           Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, loc_name: "#{location_name}", lat: "#{location_latitude}" , long: "#{location_longitude}")
         else
           Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm)
@@ -21,6 +22,7 @@ class Photo < ActiveRecord::Base
       response = HTTParty.get("#{@next}")
     end
   end
+
 
 
 end
