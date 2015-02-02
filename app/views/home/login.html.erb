@@ -15,8 +15,8 @@
     <%= n.lat %></br>
     <%= n.long %></br>
     <%= button_to "Pin It", "/pinned/new", class: 'choose btn btn-default' %>
-    <% @feed = n.id %>
-    <%= hidden_field_tag "[provider_uid]", n.id, class: "info" %>
+    <% @feed = n.user %>
+    <%= hidden_field_tag "[uid]", n.user, class: "info" %>
 
   </li>
 

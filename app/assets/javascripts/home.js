@@ -2,7 +2,7 @@
 // pagination
 
   $('.scroll').jscroll();
-  
+
 //
 // ajax for a pin -- when a user clicks pin it to add it to their saved area.
 
@@ -17,7 +17,7 @@
         div.addClass("chosen"); },
         error: function () {
           alert("ERROR");},
-          data: {feed_uid: d},
+          data: {uid: d},
         });
       });
     });

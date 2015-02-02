@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get "/home/index",                to:"home#index",        as: :login
 
-  post "/pinned/new",                to:"home#crap"
+  post "/pinned/new",                to:"album#new"
 
   get "/auth/:provider",            to: "home#create",      as: :connect
   get "/auth/:provider/callback",   to: "home#create"
