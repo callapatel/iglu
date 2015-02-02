@@ -5,7 +5,9 @@
   <% @photos.each do |n|%>
   <!-- <div class='club row'> -->
   <li>
-  <div class = 'club row'>
+  <div class = 'club row' id = <%=photo_object.fid%>
+    maxAp = <%=photo_object.max_aperture_value%>>
+    
     <%= image_tag("#{n.url}")%>
   </div>
     </br>
@@ -15,7 +17,8 @@
     <%= n.lat %></br>
     <%= n.long %></br>
     <%= button_to "Pin It", "/pinned/new", class: 'choose btn btn-default' %>
-    <% @feed = n.user %>
+    <% @uid = n.user %>
+
     <%= hidden_field_tag "[uid]", n.user, class: "info" %>
 
   </li>

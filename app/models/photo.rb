@@ -14,7 +14,7 @@ class Photo < ActiveRecord::Base
           location_longitude = n['location']['longitude']
           #caption = n['caption']['text']
           ig_user = n['caption']['from']['username']
-          Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, loc_name: "#{location_name}", lat: "#{location_latitude}" , long: "#{location_longitude}")#, #caption: "#{caption}", ig_user: "#{ig_user}")
+          Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, loc_name: "#{location_name}", lat: "#{location_latitude}", long: "#{location_longitude}")#, caption: "#{caption}", ig_user: "#{ig_user}")
         else
           Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, ig_user: "#{ig_user}" )
         end
