@@ -3,21 +3,27 @@
   <ul class="rig columns-3">
 
   <% @photos.each do |n|%>
+  <!-- <div class='club row'> -->
   <li>
-  <div class = 'imagesize'>
+  <div class = 'club row'>
     <%= image_tag("#{n.url}")%>
   </div>
     </br>
     <%= n.ig_user %></br>
-    <%= n.caption %></br>
+
     <%= n.loc_name %></br>
     <%= n.lat %></br>
     <%= n.long %></br>
+    <%= button_to "Pin It", "/pinned/new", class: 'choose btn btn-default' %>
+    <% @feed = n.id %>
+    <%= hidden_field_tag "[provider_uid]", n.id, class: "info" %>
+
   </li>
+
   <% end %>
 
 </ul>
 
 
-
 </div>
+<!-- </div> -->
