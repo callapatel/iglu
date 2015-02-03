@@ -13,11 +13,11 @@
     var d = $(".info").val();
     $.ajax(url, {
       type: "POST",
+      data: {uid: d},
       success: function (data) {
         div.addClass("chosen"); },
         error: function () {
           alert("ERROR");},
-          data: {uid: d},
         });
       });
     });
