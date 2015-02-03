@@ -19,8 +19,12 @@ class HomeController < ApplicationController
   def login
     token = User.find_by(id: session[:user_id]).token
     this_user_atm = session[:user_id]
-    @photos = Photo.all
-    Photo.api_call_to_db_update(token, this_user_atm)
+    #@photos = Photo.all
+    if this_user_atm
+      @photos = Photo.all
+    else
+      Photo.api_call_to_db_update(token, this_user_atm)
+    end
   end
 
 end

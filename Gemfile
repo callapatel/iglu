@@ -30,6 +30,7 @@ gem "omniauth-instagram"
 gem 'instagram',  :git => 'git://github.com/Instagram/instagram-ruby-gem.git'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'simplecov'
+gem "fastly-rails"
 
 group :development, :test do
   gem "rspec-rails"

@@ -1,13 +1,13 @@
 
 <div class="scroll">
   <ul class="rig columns-3">
-
+  <% cache do %>
   <% @photos.each do |n|%>
   <!-- <div class='club row'> -->
   <li>
-  <div class = 'club row' id = <%=photo_object.fid%>
-    maxAp = <%=photo_object.max_aperture_value%>>
-    
+  <div class = 'club row' >
+
+
     <%= image_tag("#{n.url}")%>
   </div>
     </br>
@@ -26,7 +26,7 @@
   <% end %>
 
 </ul>
-
+<% end %>
 
 </div>
 <!-- </div> -->
