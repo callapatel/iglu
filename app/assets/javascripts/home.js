@@ -1,7 +1,7 @@
 //
 // pagination
 
-  $('.scroll').jscroll();
+  //$('.scroll').jscroll();
 
 //
 // ajax for a pin -- when a user clicks pin it to add it to their saved area.
