@@ -8,13 +8,13 @@
 
   $(function () { $(".choose").click(function (e) {
     e.preventDefault();
-    var div = $(this).parents(".club");
+    var div = $(this).parents("li.class");
     var url = $(this).parents("form").attr("action");
-    var d = $(".info").val();
+    var id = $(".info").val();
     $.ajax(url, {
       type: "POST",
-      data: {pid: d},
-      success: function (data) {
+      data: {pid: id},
+      success: function () {
         div.addClass("chosen"); },
         error: function () {
           alert("ERROR");},

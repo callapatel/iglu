@@ -1,6 +1,7 @@
 class AlbumController < ApplicationController
 
   def new
-    AlbumPhoto.create(uid: (params[:d]))
+    puts params
+    AlbumPhoto.create(photo_id: (params[:pid]))
   end
 end
