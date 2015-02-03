@@ -10,7 +10,7 @@
     e.preventDefault();
     var div = $(this).parents("li.class");
     var url = $(this).parents("form").attr("action");
-    var id = $(".info").val();
+    var id = div.data("id");
     $.ajax(url, {
       type: "POST",
       data: {pid: id},
