@@ -19,7 +19,6 @@ class HomeController < ApplicationController
   def login
     token = User.find_by(id: session[:user_id]).token
     this_user_atm = session[:user_id]
-    #@photos = Photo.all
     if this_user_atm
       @photos = Photo.all
     else

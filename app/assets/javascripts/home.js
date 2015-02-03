@@ -13,7 +13,7 @@
     var d = $(".info").val();
     $.ajax(url, {
       type: "POST",
-      data: {uid: d},
+      data: {pid: d},
       success: function (data) {
         div.addClass("chosen"); },
         error: function () {

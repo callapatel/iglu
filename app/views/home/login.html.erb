@@ -17,9 +17,9 @@
     <%= n.lat %></br>
     <%= n.long %></br>
     <%= button_to "Pin It", "/pinned/new", class: 'choose btn btn-default' %>
-    <% @uid = n.user %>
+    <% @pid = n.id %>
 
-    <%= hidden_field_tag "[uid]", n.user, class: "info" %>
+    <%= hidden_field_tag "[pid]", n.id, class: "info" %>
 
   </li>
 
