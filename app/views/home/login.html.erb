@@ -1,15 +1,21 @@
 
 <div class="scroll">
   <ul class="rig columns-3">
-  <% cache do %>
+
+
+
+
+
+
+
   <% @photos.each do |n|%>
-  <!-- <div class='club row'> -->
+  <% cache(n) do %>
   <li class='class row' data-id=<%= n.id %>>
-  <!-- <div class = 'club row' > -->
+
 
 
     <%= image_tag("#{n.url}")%>
-  <!-- </div> -->
+
     </br>
     <%= n.ig_user %></br>
 
@@ -25,9 +31,10 @@
   </li>
 
   <% end %>
+  <% end %>
 
 </ul>
-<% end %>
+<%= will_paginate @photos%>
+
 
 </div>
-<!-- </div> -->

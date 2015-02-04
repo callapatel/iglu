@@ -18,6 +18,7 @@ gem 'instagram',  :git => 'git://github.com/Instagram/instagram-ruby-gem.git'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'simplecov'
 gem 'whenever', :require => false
+gem 'will_paginate', '~> 3.0.6'
 
 group :development, :test do
   gem 'byebug'
