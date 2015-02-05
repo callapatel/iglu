@@ -135,3 +135,9 @@ p {
 #loginzz > p span {
   padding-left: 5px;
 }
+
+.container img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 10px;
+}
