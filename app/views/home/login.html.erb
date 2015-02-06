@@ -12,7 +12,7 @@
         <%= n.lat %></br>
         <%= n.long %></br>
         <div class='actions'>
-          <%= button_to "Pin It", "/pinned/new" %>
+          <!-- OLD button with ajax working:          <!-- <%= button_to "Pin It", "/pinned/new" %> --> -->
           <!-- MODAL STARTS HERE -->
           <a id="fml"  href='javascript:void(0)' onClick="$('#event-modal-window').modal()"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Saveit</button></a>
           <div id='event-modal-window' class='modal fade' role='dialog' aria-labelledby='myModalLabel' aria-hidden
@@ -24,18 +24,18 @@
           </div>
         </div>
         <!-- MODAL ENDS HERE -->
-          <% @pid = n.id %>
-          <%= hidden_field_tag "[pid]", n.id, class: "info" %>
+        <% @pid = n.id %>
+        <%= hidden_field_tag "[pid]", n.id, class: "info" %>
 
-        </div>
       </div>
     </div>
-
-    <% end %>
   </div>
+
   <% end %>
+</div>
+<% end %>
 
 
 
-  <%= will_paginate @photos%>
+<%= will_paginate @photos%>
 </div>
