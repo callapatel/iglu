@@ -7,8 +7,15 @@
 <div class='modal-body'>
   <form action='user/email' method='POST' role='form'>
     <div class = 'form-group'>
-      <label for='subscribeEmail'>Add to a board</label>
-      <input type='text' name='user[email]' class='form-control' placeholder='Enter email' id='subscribeEmail'/>
+
+      <select name="user_id">
+        <%= User.all.each do |user| %>
+        <option value="<%= user.id %>"><%= user.name %></option>
+        <% end %>
+      </select>
+
+      <label for='albumOption'>Add to a board</label>
+      <input type='text' name='album[email]' class='form-control' placeholder='Board Name' id='subscribeEmail'/>
     </div>
   </div>
 
