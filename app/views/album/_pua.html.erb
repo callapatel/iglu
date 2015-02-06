@@ -7,7 +7,7 @@
 <div class='modal-body'>
   <form action='/pinned/new' method='POST' role='form'>
     <div class = 'form-group'>
-
+    <%= raise %> 
       <label for='albumOption'>Add to a board</label>
       <select name="album_id"><center>
         <%= Album.all.each do |user| %>

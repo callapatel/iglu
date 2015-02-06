@@ -4,7 +4,7 @@
     <% photo.each do |n| %>
     <% cache(n) do %>
     <div class= 'col-xs-12 col-md-4'>
-      <div class='class' data-id=<%= n.id %>>
+      <div class='class' data-id=<%= @yay = n.id %>>
 
         <%= image_tag n.url %></br>
         <%= n.ig_user %></br>
