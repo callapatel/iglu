@@ -1,7 +1,7 @@
 
 <div class='modal-header'>
   <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>x</button>
-  <div class='modal-title'><h2><b><i>Sign up for email updates!</i></b></h2></div>
+  <div class='modal-title'><h2><b><center>Tack It!</center></b></h2></div>
 </div>
 
 <div class='modal-body'>
@@ -9,14 +9,14 @@
     <div class = 'form-group'>
 
       <label for='albumOption'>Add to a board</label>
-      <select name="user_id">
+      <select name="user_id"><center>
         <%= Album.all.each do |user| %>
-        <option value="<%= album.a_name %>"><%= album.a_name %></option>
-        <% end %>
-      </select>
+        <option value="<%= Album.find_by(uid: current_user).a_name %>"><%= Album.find_by(uid: current_user ).a_name %></option>
+      </center> <% end %>
+    </select> </br></br> 
 
-      <label for='albumOption'>Add to a board</label>
-      <input type='text' name='album[email]' class='form-control' placeholder='Board Name' id='subscribeEmail'/>
+      <label for='albumOption'>Description</label>
+      <input type='text' name='album[email]' class='form-control' placeholder='Write a description' id='subscribeEmail'/>
     </div>
   </div>
 

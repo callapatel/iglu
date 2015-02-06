@@ -1,7 +1,8 @@
 <div class="container">
-  <% @photos.in_groups_of(3).each do |r|%>
+  <% @photos.in_groups_of(3).each do |photo|%>
   <div class="row">
-    <% r.each do |n| %>
+    <% photo.each do |n| %>
+    <% cache(n) do %>
     <div class= 'col-xs-12 col-md-4'>
       <div class='class' data-id=<%= n.id %>>
 
@@ -30,7 +31,7 @@
       </div>
     </div>
   </div>
-
+  <% end %>
   <% end %>
 </div>
 <% end %>
