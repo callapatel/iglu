@@ -5,15 +5,15 @@
 </div>
 
 <div class='modal-body'>
-  <form action='user/email' method='POST' role='form'>
+  <form action='/pinned/new' method='POST' role='form'>
     <div class = 'form-group'>
 
       <label for='albumOption'>Add to a board</label>
-      <select name="user_id"><center>
+      <select name="album_id"><center>
         <%= Album.all.each do |user| %>
         <option value="<%= Album.find_by(uid: current_user).a_name %>"><%= Album.find_by(uid: current_user ).a_name %></option>
       </center> <% end %>
-    </select> </br></br> 
+    </select> </br></br>
 
       <label for='albumOption'>Description</label>
       <input type='text' name='album[email]' class='form-control' placeholder='Write a description' id='subscribeEmail'/>
