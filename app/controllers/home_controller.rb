@@ -23,8 +23,8 @@ class HomeController < ApplicationController
     # if this_user_atm
     #   @photos = Photo.paginate(:page => params[:page], :per_page => 30)
     # else
-    #   Photo.api_call_to_db_update(token, this_user_atm)
-    # end
+      Photo.api_call_to_db_update(token, this_user_atm)
+    #end
   end
 
 end

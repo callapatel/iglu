@@ -10,18 +10,19 @@ class Photo < ActiveRecord::Base
     3.times do
       @lovely = response.parsed_response["data"]
       @lovely.each do |n|
+
         welcome = n['images']['standard_resolution']['url']
-        if n['location'] && n['caption']
+        if n['location']
           location_name = n['location']['name']
           location_latitude = n['location']['latitude']
           location_longitude = n['location']['longitude']
-          #<%= collection.name.present? ? collection.name : @miniature.name %>
-          #caption = n['caption']['text']
-          n['caption']['text'].present? ? caption = n['caption']['text'] : "nil"
-          ig_user = n['caption']['from']['username']
+          n['caption'].present? ? caption = n['caption']['text'] : "nil"
+          n['caption'].present? ? ig_user = n['caption']['from']['username'] : nil
           Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, loc_name: "#{location_name}", lat: "#{location_latitude}", long: "#{location_longitude}", caption: "#{caption}", ig_user: "#{ig_user}")
         else
-          Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, ig_user: "#{ig_user}" )
+          n['caption'].present? ? caption = n['caption']['text'] : "nil"
+          n['caption'].present? ? ig_user = n['caption']['from']['username'] : nil
+          Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, ig_user: "#{ig_user}", caption: "#{caption}" )
         end
       end
       @next = response.parsed_response['pagination']['next_url']
@@ -39,16 +40,17 @@ class Photo < ActiveRecord::Base
         @lovely = response.parsed_response["data"]
         @lovely.each do |n|
           welcome = n['images']['standard_resolution']['url']
-          if n['location'] && n['caption']
+          if n['location']
             location_name = n['location']['name']
             location_latitude = n['location']['latitude']
             location_longitude = n['location']['longitude']
-            #caption = n['caption']['text']
-            n['caption']['text'].present? ? caption = n['caption']['text'] : "nil"
-            ig_user = n['caption']['from']['username']
+            n['caption'].present? ? caption = n['caption']['text'] : "nil"
+            n['caption'].present? ? ig_user = n['caption']['from']['username'] : nil
             Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, loc_name: "#{location_name}", lat: "#{location_latitude}", long: "#{location_longitude}", caption: "#{caption}", ig_user: "#{ig_user}")
           else
-            Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, ig_user: "#{ig_user}" )
+            n['caption'].present? ? caption = n['caption']['text'] : "nil"
+            n['caption'].present? ? ig_user = n['caption']['from']['username'] : nil
+            Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, ig_user: "#{ig_user}", caption: "#{caption}" )
           end
         end
         @next = response.parsed_response['pagination']['next_url']
