@@ -1,1 +1,18 @@
-Hi
+
+<div class='modal-header'>
+  <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>x</button>
+  <div class='modal-title'><h2><b><i>Sign up for email updates!</i></b></h2></div>
+</div>
+
+<div class='modal-body'>
+  <form action='user/email' method='POST' role='form'>
+    <div class = 'form-group'>
+      <label for='subscribeEmail'>EMAIL</label>
+      <input type='text' name='user[email]' class='form-control' placeholder='Enter email' id='subscribeEmail'/>
+    </div>
+  </div>
+
+  <div class='modal-footer'>
+    <input type='submit' value='Get notified!' class='btn btn-primary'/>
+  </form>
+</div>
