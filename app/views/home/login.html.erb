@@ -17,15 +17,15 @@
 
           <!-- MODAL STARTS HERE -->
           <a id="fml"  href='javascript:void(0)' onClick="$('#event-modal-window').modal()">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addListItem" data:<%= n.id %>  target: "#addListItem">
               Tackit
             </button>
           </a>
-          <div id='event-modal-window' class='modal fade' role='dialog' aria-labelledby='myModalLabel' aria-hidden
+          <div id='event-modal-window' class='modal fade' id="addListItem" role='dialog' aria-labelledby='myModalLabel' aria-hidden
           ='true' >
           <div class='modal-dialog'>
             <div class='modal-content'>
-              <%= render 'album/pua'%>
+              <%= render 'album/pua', :n => 5 %>
             </div>
           </div>
         </div>

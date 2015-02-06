@@ -7,13 +7,15 @@
 <div class='modal-body'>
   <form action='/pinned/new' method='POST' role='form'>
     <div class = 'form-group'>
-    <%= raise %> 
+
       <label for='albumOption'>Add to a board</label>
       <select name="album_id"><center>
         <%= Album.all.each do |user| %>
         <option value="<%= Album.find_by(uid: current_user).a_name %>"><%= Album.find_by(uid: current_user ).a_name %></option>
       </center> <% end %>
     </select> </br></br>
+
+      <input name="photo[id]" type="hidden" value= <%= params[:n]%>  id =inventory-item-id  />
 
       <label for='albumOption'>Description</label>
       <input type='text' name='album[email]' class='form-control' placeholder='Write a description' id='subscribeEmail'/>
