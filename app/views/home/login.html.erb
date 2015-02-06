@@ -1,27 +1,35 @@
 <div class="container">
-  <!-- <ul class="rig columns-3"> -->
-
   <% @photos.in_groups_of(3).each do |r|%>
   <div class="row">
     <% r.each do |n| %>
     <div class= 'col-xs-12 col-md-4'>
       <div class='class' data-id=<%= n.id %>>
-        <%= image_tag("#{n.url}")%></br>
+
+        <%= image_tag n.url %></br>
         <%= n.ig_user %></br>
         <%= n.caption %></br>
         <%= n.loc_name %></br>
         <%= n.lat %></br>
         <%= n.long %></br>
         <div class='actions'>
-          <%= button_to "Pin It", "/pinned/new", class: 'choose btn btn-default show-modal open-modal' %>
+          <%= button_to "Pin It", "/pinned/new" %>
+          <a id="fml"  href='javascript:void(0)' onClick="$('#event-modal-window').modal()"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Saveit</button></a>
+          <div id='event-modal-window' class='modal fade' role='dialog' aria-labelledby='myModalLabel' aria-hidden
+          ='true' >
+          <div class='modal-dialog'>
+            <div class='modal-content'>
+              <%= render 'album/pi'%>
+            </div>
+          </div>
+        </div>
 
           <% @pid = n.id %>
           <%= hidden_field_tag "[pid]", n.id, class: "info" %>
 
-
         </div>
       </div>
     </div>
+
     <% end %>
   </div>
   <% end %>
