@@ -8,9 +8,10 @@
   <form action='user/email' method='POST' role='form'>
     <div class = 'form-group'>
 
+      <label for='albumOption'>Add to a board</label>
       <select name="user_id">
-        <%= User.all.each do |user| %>
-        <option value="<%= user.id %>"><%= user.name %></option>
+        <%= Album.all.each do |user| %>
+        <option value="<%= album.a_name %>"><%= album.a_name %></option>
         <% end %>
       </select>
 
