@@ -11,7 +11,13 @@
       <label for='albumOption'>Add to a board</label>
       <select name="album_id">
         <center>
-
+          <% Album.all.each do |user| %>
+          if user == nil?
+            "you'll need to create an album!"
+          else
+          <option value "<%= Album.find_by(uid: current_user).a_name %>"><%= Album.find_by(uid: current_user ).a_name %>
+          <% end %>
+          </option>
         </center>
       </select> <br/><br/>
 
