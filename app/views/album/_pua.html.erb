@@ -12,13 +12,10 @@
       <select name="album_id">
         <center>
           <% Album.all.each do |user| %>
-          <% if user == nil? %>
-          <option value "you'll need to create an album!"><"you'll need to create one!"> 
-            <% else %>
-            <option value "<%= Album.find_by(uid: current_user).a_name %>"><%= Album.find_by(uid: current_user ).a_name %>
-              <% end %>
-              <% end %>
-            </option>
+          <% @their_album = Album.find_by(uid: (current_user.id)).a_name %>
+            <option value "<%= @their_album %>"><%= @their_album %></option>
+          <% end %>
+
           </center>
         </select> <br/><br/>
 
