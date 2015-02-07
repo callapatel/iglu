@@ -13,25 +13,25 @@
         <center>
           <% Album.all.each do |user| %>
           <% if user == nil? %>
-            <%= "you'll need to create an album!"  %>
-          <% else %>
-          <option value "<%= Album.find_by(uid: current_user).a_name %>"><%= Album.find_by(uid: current_user ).a_name %>
-          <% end %>
-          <% end %> 
-          </option>
-        </center>
-      </select> <br/><br/>
+          <option value "you'll need to create an album!"><"you'll need to create one!"> 
+            <% else %>
+            <option value "<%= Album.find_by(uid: current_user).a_name %>"><%= Album.find_by(uid: current_user ).a_name %>
+              <% end %>
+              <% end %>
+            </option>
+          </center>
+        </select> <br/><br/>
 
-      <input name="photo[id]" type="hidden" value=<%= locals[:photo_id] %> id ="inventory-item-id" />
+        <input name="photo[id]" type="hidden" value=<%= locals[:photo_id] %> id ="inventory-item-id" />
 
-      <label for='albumOption'>Create a new board</label>
-      <h3> Name </h3>
-      <input type='text' name='album[name]' class='form-control' placeholder="Like 'places to go' or 'recipies to make'" id='albumNewName'/>
-    </div>
+        <label for='albumOption'>Create a new board</label>
+        <h3> Name </h3>
+        <input type='text' name='album[name]' class='form-control' placeholder="Like 'places to go' or 'recipies to make'" id='albumNewName'/>
+      </div>
 
 
-  <div class='modal-footer'>
-    <input type='submit' value='Tack it!' class='btn btn-primary'/>
-    </div>
-  </form>
-</div>
+      <div class='modal-footer'>
+        <input type='submit' value='Tack it!' class='btn btn-primary'/>
+      </div>
+    </form>
+  </div>
