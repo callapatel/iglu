@@ -11,15 +11,12 @@
       <label for='albumOption'>Add to a board</label>
       <select name="album_id">
         <center>
-          <%= Album.all.each do |user| %>
-          <option value="<%= Album.find_by(uid: current_user).a_name %>"><%= Album.find_by(uid: current_user ).a_name %></option>
 
-          <% end %>
         </center>
       </select> <br/><br/>
 
-      <input name="photo[id]" type="hidden" value=""  id ="inventory-item-id"  />
-
+      <input name="photo[id]" type="hidden" value=<%= locals[:photo_id] %> id ="inventory-item-id" />
+      
       <label for='albumOption'>Description</label>
       <input type='text' name='album[email]' class='form-control' placeholder='Write a description' id='subscribeEmail'/>
     </div>
