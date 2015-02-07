@@ -9,20 +9,24 @@
     <div class = 'form-group'>
 
       <label for='albumOption'>Add to a board</label>
-      <select name="album_id"><center>
-        <%= Album.all.each do |user| %>
-        <option value="<%= Album.find_by(uid: current_user).a_name %>"><%= Album.find_by(uid: current_user ).a_name %></option>
-      </center> <% end %>
-    </select> </br></br>
+      <select name="album_id">
+        <center>
+          <%= Album.all.each do |user| %>
+          <option value="<%= Album.find_by(uid: current_user).a_name %>"><%= Album.find_by(uid: current_user ).a_name %></option>
 
-      <input name="photo[id]" type="hidden" value= <%= params[:n]%>  id =inventory-item-id  />
+          <% end %>
+        </center>
+      </select> <br/><br/>
+
+      <input name="photo[id]" type="hidden" value=""  id ="inventory-item-id"  />
 
       <label for='albumOption'>Description</label>
       <input type='text' name='album[email]' class='form-control' placeholder='Write a description' id='subscribeEmail'/>
     </div>
-  </div>
+
 
   <div class='modal-footer'>
     <input type='submit' value='Get notified!' class='btn btn-primary'/>
+    </div>
   </form>
 </div>
