@@ -11,8 +11,9 @@
       <label for='albumOption'>Add to a board</label>
       <select name="album_id">
         <center>
-          <% Album.all.each do |user| %>
-          <% @their_album = Album.find_by(uid: (current_user.id)).a_name %>
+          <% @gr = Album.where(uid: current_user.id) %>
+          <% @gr.each do |user| %>
+          <% @their_album = user.a_name %>
             <option value "<%= @their_album %>"><%= @their_album %></option>
           <% end %>
 
