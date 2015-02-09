@@ -14,7 +14,7 @@ gem 'rails_12factor', group: :production
 gem 'bootstrap-sass', '3.2.0.2'
 gem "omniauth"
 gem "omniauth-instagram"
-gem 'instagram',  :git => 'git://github.com/Instagram/instagram-ruby-gem.git'
+#gem 'instagram',  :git => 'git://github.com/Instagram/instagram-ruby-gem.git'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'simplecov'
 gem 'whenever', :require => false
@@ -25,7 +25,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem "rspec-rails"
-  
+
 end
 
 group :development do
