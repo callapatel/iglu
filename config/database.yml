@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: iglu_production
-  username: iglu
+  username: ubuntu
   password: <%= ENV['IGLU_DATABASE_PASSWORD'] %>

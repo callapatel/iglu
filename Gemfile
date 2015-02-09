@@ -25,6 +25,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem "rspec-rails"
+  
 end
 
 group :development do
@@ -32,3 +33,13 @@ group :development do
   gem "binding_of_caller"
   #gem 'rubocop'
 end
+
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem "capistrano-passenger"
+end
+
+gem 'therubyracer', platforms: :ruby
