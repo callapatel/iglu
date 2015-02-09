@@ -2,7 +2,9 @@ class AlbumController < ApplicationController
 
   def new
     #DO SOMETHING IF THE USER DOESNT HAVE ALBUM
+
     @albumidfromparams = params[:album_id]
+    puts 
     @albumnamefromparams = params[:album]["name"]
     @this_here_now_person = current_user.id
     @photo_id_from_params_modal = params[:photo]["id"]
@@ -15,6 +17,7 @@ class AlbumController < ApplicationController
     else
       @gowithit = @albumidfromparams
        Album.create(a_name: @gowithit, uid: current_user.id)
+       raise
     end
     #AlbumPhoto.create(uid: current_user.id, photo_id: (params[:photo]["id"]), album_id: @gowithit)
     AlbumPhoto.create(uid: @this_here_now_person, photo_id: @photo_id_from_params_modal, album_id: @gowithit)

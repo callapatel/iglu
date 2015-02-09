@@ -14,7 +14,8 @@
           <% @gr = Album.where(uid: current_user.id) %>
           <% @gr.each do |user| %>
           <% @their_album = user.a_name %>
-            <option value "<%= @their_album %>"><%= @their_album %></option>
+          <% @their_a_id = user.id %>
+            <option value "whatt"><%= @their_album %></option>
           <% end %>
 
           </center>
