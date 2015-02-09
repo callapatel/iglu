@@ -1,0 +1,16 @@
+<%= form_for @album_photo do |f| %>
+<p><%= f.label :name %>:</p>
+<p><%= f.text_field :name %></p>
+<p><%= f.label creator%>:</p>
+<p><%= f.text_field creator %></p>
+<p><%= f.label :description %>:</p>
+<p><%= f.text_field :description %></p>
+<p><%= f.submit %></p>
+<% end %>
+
+
+<div class="dropdown-row centered-content">
+  <div class="col-md-3" id="OrgDropdown">
+    <%= select_tag(:organizations, options_for_select(@organization_array)) %>
+  </div>
+  

@@ -12,14 +12,16 @@
       <select name="album_id">
         <center>
           <% @gr = Album.where(uid: current_user.id) %>
-          <% @gr.each do |user| %>
-          <% @their_album = user.a_name %>
-          <% @their_a_id = user.id %>
-            <option value "whatt"><%= @their_album %></option>
+          <% @gr.all.each do |user| %>
+            <% @their_album = user.a_name %>
+            <% @their_a_id = user.id %>
+            <option value "<%= user.a_name %>">
+              <%= user.a_name %>
+            </option>
           <% end %>
 
-          </center>
-        </select> <br/><br/>
+        </center>
+      </select> <br/><br/>
 
         <input name="photo[id]" type="hidden" value=<%= locals[:photo_id] %> id ="inventory-item-id" />
 

@@ -4,7 +4,7 @@ class AlbumController < ApplicationController
     #DO SOMETHING IF THE USER DOESNT HAVE ALBUM
 
     @albumidfromparams = params[:album_id]
-    puts 
+    raise
     @albumnamefromparams = params[:album]["name"]
     @this_here_now_person = current_user.id
     @photo_id_from_params_modal = params[:photo]["id"]
@@ -13,9 +13,11 @@ class AlbumController < ApplicationController
     #if they wrote it in its sent to the same field as if it were selected from the dropped list into the db
     if @albumidfromparams == "" || @albumidfromparams.nil?
       @gowithit = @albumnamefromparams
+      raise
       Album.create(a_name: @gowithit, uid: current_user.id)
     else
       @gowithit = @albumidfromparams
+      raise
        Album.create(a_name: @gowithit, uid: current_user.id)
        raise
     end
