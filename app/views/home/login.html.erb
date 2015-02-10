@@ -10,8 +10,22 @@
         <%= n.ig_user %></br>
         <%= n.caption %></br>
         <%= n.loc_name %></br>
-        <%= n.lat %></br>
-        <%= n.long %></br>
+        <%= @lat = n.lat %></br>
+        <%= @long = n.long %></br>
+
+        <% coordinates = { latitude: @lat, longitude: @long} %>
+        <% filter = {limit: 1, radius_filter: 1609.34, } %>
+        <% @result = Yelp.client.search_by_coordinates(coordinates, filter) rescue [] %>
+        <% if @result == [] %>
+        <% puts '' %>
+        <% elsif @result.businesses == []%>
+        <% puts '' %>
+        <% else %>
+        <%= @yelpurl = @result.businesses[0].url.present?  %>
+        <%= @yelpname = @result.businesses[0].name %>
+        <%= @yelpaddress = @result.businesses[0].location.display_address %>
+        <% end %>
+        
         <div class='actions'>
           <!-- OLD button with ajax working:          <!-- <%= button_to "Pin It", "/pinned/new" %> -->
 

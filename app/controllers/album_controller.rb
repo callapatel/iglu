@@ -1,6 +1,7 @@
 class AlbumController < ApplicationController
   require 'yelp'
 
+
   def new
     #DO SOMETHING IF THE USER DOESNT HAVE ALBUM
 
@@ -24,16 +25,29 @@ class AlbumController < ApplicationController
     redirect_to root_path
   end
 
+  def math
+    coordinates = { latitude: 36.1128, longitude: -115.1744 }
+    filter = {limit: 1, radius_filter: 1609.34, }
+    @result = Yelp.client.search_by_coordinates(coordinates, filter) rescue []
+  end
+
   def playground
-    @Photos = Photo.all 
-  # coordinates = { latitude: 36.1128, longitude: -115.1744 }
-  # filter = {limit: 1, radius_filter: 1609.34, }
-  #   @result = Yelp.client.search_by_coordinates(coordinates, filter)
-  #   @result.businesses[0].url
-  #   @result.businesses[0].name
-  #   @result.businesses[0].location.display_address
-  #
-  #   raise
+    # @Photos.each do |n|
+       @lat=  n.lat
+       @long = n.long
+       coordinates = { latitude: @lat, longitude: @long}
+       filter = {limit: 1, radius_filter: 1609.34, }
+       @result = Yelp.client.search_by_coordinates(coordinates, filter) rescue []
+      if @result == []
+         puts ''
+        elsif @result.businesses == []
+          puts ''
+        else
+         @yelpurl = @result.businesses[0].url.present?
+         @yelpname = @result.businesses[0].name
+         @yelpaddress = @result.businesses[0].location.display_address
+      end
+    #end
 
   end
 
