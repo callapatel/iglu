@@ -18,22 +18,16 @@
         <% @result = Yelp.client.search_by_coordinates(coordinates, filter) rescue [] %>
         <% @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY']) %>
         <% if @result == [] %>
-          <% if n.loc_name == nil or n.loc_name == ""%>
-            <% @lat == nil or @lat == ""? @hope = " " : @hope = @client.spots(@lat, @long)[0] %>
-            <%= @hope %>
-          <% else %>
-            <% @lat == nil or @lat == ""? @hope = " " : @hope = @client.spots(@lat, @long, :name => n.loc_name) %>
-            <%= @hope %>
-          <% end %>
+          <% @lat != 'nil' ? '' : @hope = @client.spots(@lat, @long)[0].name %>
+          <%= @hope %>
         <% elsif @result.businesses == []%>
-          <% n.loc_name == nil ? @hope = @client.spots(@lat, @long)[0] : @hope = @client.spots(@lat, @long, :name => n.loc_name) %>
+          <% n.loc_name == nil ? @hope = @client.spots(@lat, @long)[0].name : @hope = @client.spots(@lat, @long, :name => n.loc_name) %>
           <%= @hope %>
         <% else %>
           <%= @yelpurl = @result.businesses[0].url  %>
           <%= @yelpname = @result.businesses[0].name %>
           <%= @yelpaddress = @result.businesses[0].location.display_address %>
-          <% @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY']) %>
-          <%= @client.spots(@lat, @long, :name => @yelpname) %>
+        
         <% end %>
 
 
