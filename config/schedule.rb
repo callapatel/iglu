@@ -22,8 +22,3 @@ set :output, "log/cron_log.log"
 every 3.hour do
   runner "Photo.api_calling"
 end
-
-# set :output, "log/cron_log_1.log"
-# every 1.day do
-#   runner ""
-# end
