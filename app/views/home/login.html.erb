@@ -18,11 +18,16 @@
         <% @result = Yelp.client.search_by_coordinates(coordinates, filter) rescue [] %>
         <% @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY']) %>
         <% if @result == [] %>
-          <% @lat != 'nil' ? '' : @hope = @client.spots(@lat, @long) %> 
+          <% if n.loc_name == nil or n.loc_name == ""%>
+            <% @lat == nil or @lat == ""? @hope = " " : @hope = @client.spots(@lat, @long)[0] %>
+            <%= @hope %>
+          <% else %>
+            <% @lat == nil or @lat == ""? @hope = " " : @hope = @client.spots(@lat, @long, :name => n.loc_name) %>
+            <%= @hope %>
+          <% end %>
         <% elsif @result.businesses == []%>
-          <% @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY']) %>
-          <%= @client.spots(@lat, @long) %>
-          <% puts '' %>
+          <% n.loc_name == nil ? @hope = @client.spots(@lat, @long)[0] : @hope = @client.spots(@lat, @long, :name => n.loc_name) %>
+          <%= @hope %>
         <% else %>
           <%= @yelpurl = @result.businesses[0].url  %>
           <%= @yelpname = @result.businesses[0].name %>
