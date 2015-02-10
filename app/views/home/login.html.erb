@@ -2,7 +2,7 @@
   <% @photos.in_groups_of(3).each do |photo|%>
   <div class="row">
     <% photo.each do |n| %>
-    <% cache(n) do %>
+    <!-- <%# cache(n) do %> -->
     <div class= 'col-xs-12 col-md-4'>
       <div class='class' data-id="<%= @yay = n.id %>">
 
@@ -37,7 +37,7 @@
       </div>
     </div>
   </div>
-  <% end %>
+  <!-- <%# end %> -->
   <% end %>
 </div>
 <% end %>
