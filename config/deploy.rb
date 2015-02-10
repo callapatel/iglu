@@ -30,7 +30,8 @@ set :use_sudo, false
 # set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 # Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+ set :default_env, {'YELP_CONSUMER_KEY' => ENV['YELP_CONSUMER_KEY'], 'YELP_CONSUMER_SECRET' => ENV['YELP_CONSUMER_SECRET'],
+   'YELP_TOKEN' => ENV['YELP_TOKEN'], 'YELP_TOKEN_SECRET' => ENV['YELP_TOKEN_SECRET']}
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
