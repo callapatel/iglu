@@ -32,23 +32,9 @@ class AlbumController < ApplicationController
   end
 
   def playground
-    # @Photos.each do |n|
-       @lat=  n.lat
-       @long = n.long
-       coordinates = { latitude: @lat, longitude: @long}
-       filter = {limit: 1, radius_filter: 1609.34, }
-       @result = Yelp.client.search_by_coordinates(coordinates, filter) rescue []
-      if @result == []
-         puts ''
-        elsif @result.businesses == []
-          puts ''
-        else
-         @yelpurl = @result.businesses[0].url.present?
-         @yelpname = @result.businesses[0].name
-         @yelpaddress = @result.businesses[0].location.display_address
-      end
-    #end
-
+    @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY'])
+    @client.spots(37.7577, -122.4376 )
+    raise
   end
 
 

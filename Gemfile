@@ -20,6 +20,7 @@ gem 'simplecov'
 gem 'whenever', :require => false
 gem 'will_paginate', '~> 3.0.6'
 gem 'yelp', require: 'yelp'
+gem 'google_places'
 
 group :development, :test do
   gem 'byebug'
