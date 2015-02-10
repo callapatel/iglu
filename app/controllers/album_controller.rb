@@ -1,6 +1,6 @@
 class AlbumController < ApplicationController
-  include Yelp::V2::Search::Request::GeoPoint
-  
+  require 'yelp'
+
   def new
     #DO SOMETHING IF THE USER DOESNT HAVE ALBUM
 
@@ -25,11 +25,12 @@ class AlbumController < ApplicationController
   end
 
   def playground
+    coordinates = { latitude: 37.7577, longitude: -122.4376 }
+    @result = Yelp.client.search_by_coordinates(coordinates)
+    @results =result.parse
 
-    client = Yelp::Client.new
-    request = GeoPoint.new(
-    :latitude => 37.788022,
-    :longitude => -122.399797)
-    @response = client.search(request)
   end
+
+
+
 end

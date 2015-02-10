@@ -1,5 +1,6 @@
-Yelp.configure(
-:consumer_key    => ENV["YELP_CONSUMER_KEY"],
-:consumer_secret => ENV["YELP_CONSUMER_KEY"],
-:token           => ENV["YELP_CONSUMER_KEY"],
-:token_secret    => ENV["YELP_CONSUMER_KEY"])
+Yelp.client.configure do |config|
+  config.consumer_key = ENV['YELP_CONSUMER_KEY']
+  config.consumer_secret = ENV['YELP_CONSUMER_SECRET']
+  config.token = ENV['YELP_TOKEN']
+  config.token_secret = ENV['YELP_TOKEN_SECRET']
+end

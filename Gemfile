@@ -19,7 +19,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'simplecov'
 gem 'whenever', :require => false
 gem 'will_paginate', '~> 3.0.6'
-gem 'yelpster'
+gem 'yelp', require: 'yelp'
 
 group :development, :test do
   gem 'byebug'
