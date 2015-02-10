@@ -1,1 +1,13 @@
-<%= @results %> 
+<% filter = {limit: 1, radius_filter: 1609.34, } %>
+<% @Photos.each do |whereami| %>
+  <% whereami.lat %>
+  <% whereami.long %>
+  <% coordinates = { latitude: whereami.lat, longitude: whereami.long } %>
+  n['caption'].present? ? caption = n['caption']['text'] : "nil"
+  <% @result = Yelp.client.search_by_coordinates(coordinates, filter)%>
+    <% if @result ==!! #<Yelp::Error::UnavailableForLocation: API unavailable in this location>  %>
+      <%= @result.businesses[0].url %>
+      <%= @result.businesses[0].name %>
+      <%= @result.businesses[0].location.display_address %>
+    <% end %>
+  <% end %>

@@ -25,11 +25,15 @@ class AlbumController < ApplicationController
   end
 
   def playground
-    coordinates = { latitude: 36.1128, longitude: -115.1744 }
-  filter = {limit: 1, radius_filter: 1609.34, }
-    @result = Yelp.client.search_by_coordinates(coordinates, filter)
-    @results =result.parse
-    raise
+    @Photos = Photo.all 
+  # coordinates = { latitude: 36.1128, longitude: -115.1744 }
+  # filter = {limit: 1, radius_filter: 1609.34, }
+  #   @result = Yelp.client.search_by_coordinates(coordinates, filter)
+  #   @result.businesses[0].url
+  #   @result.businesses[0].name
+  #   @result.businesses[0].location.display_address
+  #
+  #   raise
 
   end
 
