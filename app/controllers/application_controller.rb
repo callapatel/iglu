@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user #enables you to call current_user in the view now
 
-  def requie_login
+  def require_login 
     unless session[:user_id].present?
       redirect_to connect_path,
       notice: "Please sign in"
