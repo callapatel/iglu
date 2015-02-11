@@ -62,6 +62,7 @@ class Photo < ActiveRecord::Base
 
 
   def self.google
+    puts "googleit"
     Photo.all.each do |n|
       @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY'])
       if n.lat == "" or n.lat == nil
@@ -75,6 +76,7 @@ class Photo < ActiveRecord::Base
   end
 
   def self.yelp
+    puts "yelpit"
     Photo.all.each do |n|
       coordinates = { latitude: n.lat, longitude: n.long}
       filter = {limit: 1, radius_filter: 1609.34, }

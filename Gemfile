@@ -21,6 +21,7 @@ gem 'whenever', :require => false
 gem 'will_paginate', '~> 3.0.6'
 gem 'yelp', require: 'yelp'
 gem 'google_places'
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'byebug'
