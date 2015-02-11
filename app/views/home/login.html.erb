@@ -1,5 +1,5 @@
 <div class="container">
-  <% @photos.in_groups_of(3).each do |photo|%>
+  <% @photos.where(user: current_user.id).in_groups_of(3).each do |photo|%>
   <div class="row">
     <% photo.each do |n| %>
     <!-- <%# cache(n) do %> -->
@@ -38,7 +38,7 @@
           <% @hope %>
         <% else %>
           <%= @yelpurl = @result.businesses[0].url  %>
-        
+
 
         <% end %>
 
