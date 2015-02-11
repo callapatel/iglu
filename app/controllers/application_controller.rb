@@ -18,10 +18,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def destroy
-    session[:user_id] = nil
-    flash[:notice] = true
-    redirect_to login_path 
-  end
+  
 
 end
