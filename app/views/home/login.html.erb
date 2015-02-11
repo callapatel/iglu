@@ -12,35 +12,9 @@
         <%= @loc = n.loc_name %></br>
         <%= @lat = n.lat %></br>
         <%= @long = n.long %></br>
-        <% @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY']) %>
-        <% if @lat == "" or @lat == nil %>
-          <%= "" %>
-        <% else %>
-          <%= @client.spots(@lat, @long)[0].name %>
-        <% end %>
+        <%= n.google_name %></br>
+        <%= n.yelp_url %></br> 
 
-
-
-
-
-
-
-
-        <% coordinates = { latitude: @lat, longitude: @long} %>
-        <% filter = {limit: 1, radius_filter: 1609.34, } %>
-        <% @result = Yelp.client.search_by_coordinates(coordinates, filter) rescue [] %>
-        <% @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY']) %>
-        <% if @result == [] %>
-          <% @lat != 'nil' ? '' : @hope = @client.spots(@lat, @long)[0].name %>
-          <% @hope %>
-        <% elsif @result.businesses == []%>
-          <% n.loc_name == nil ? @hope = @client.spots(@lat, @long)[0].name : @hope = @client.spots(@lat, @long, :name => n.loc_name) %>
-          <% @hope %>
-        <% else %>
-          <%= @yelpurl = @result.businesses[0].url  %>
-
-
-        <% end %>
 
 
         <div class='actions'>
