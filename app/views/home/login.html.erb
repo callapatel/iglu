@@ -9,9 +9,22 @@
         <%= image_tag n.url %></br>
         <%= n.ig_user %></br>
         <%= n.caption %></br>
-        <%= n.loc_name %></br>
+        <%= @loc = n.loc_name %></br>
         <%= @lat = n.lat %></br>
         <%= @long = n.long %></br>
+        <% @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY']) %>
+        <% if @lat == "" or @lat == nil %>
+          <%= "" %>
+        <% else %>
+          <%= @client.spots(@lat, @long)[0].name %>
+        <% end %>
+
+
+
+
+
+
+
 
         <% coordinates = { latitude: @lat, longitude: @long} %>
         <% filter = {limit: 1, radius_filter: 1609.34, } %>
@@ -27,7 +40,7 @@
           <%= @yelpurl = @result.businesses[0].url  %>
           <%= @yelpname = @result.businesses[0].name %>
           <%= @yelpaddress = @result.businesses[0].location.display_address %>
-        
+
         <% end %>
 
 
