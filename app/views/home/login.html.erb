@@ -16,7 +16,7 @@
         <% if @lat == "" or @lat == nil %>
           <%= "" %>
         <% else %>
-          <%= @client.spots(@lat, @long)[0].name %> 
+          <%= @client.spots(@lat, @long)[0].name %>
         <% end %>
 
 
@@ -32,14 +32,13 @@
         <% @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY']) %>
         <% if @result == [] %>
           <% @lat != 'nil' ? '' : @hope = @client.spots(@lat, @long)[0].name %>
-          <%= @hope %>
+          <% @hope %>
         <% elsif @result.businesses == []%>
           <% n.loc_name == nil ? @hope = @client.spots(@lat, @long)[0].name : @hope = @client.spots(@lat, @long, :name => n.loc_name) %>
-          <%= @hope %>
+          <% @hope %>
         <% else %>
           <%= @yelpurl = @result.businesses[0].url  %>
-          <%= @yelpname = @result.businesses[0].name %>
-          <%= @yelpaddress = @result.businesses[0].location.display_address %>
+        
 
         <% end %>
 
