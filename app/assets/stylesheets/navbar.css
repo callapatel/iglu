@@ -102,6 +102,7 @@ nav {
   -ms-user-select:none;
   -o-user-select:none;
   user-select:none;
+  position: fixed; 
 }
 
 nav ul,nav li {

@@ -76,20 +76,23 @@ class Photo < ActiveRecord::Base
   end
 
   def self.yelp
-    puts "yelpit"
     Photo.all.each do |n|
       coordinates = { latitude: n.lat, longitude: n.long}
+      @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY'])
       filter = {limit: 1, radius_filter: 1609.34, }
       @result = Yelp.client.search_by_coordinates(coordinates, filter) rescue []
       if @result == []
         n.lat != 'nil' ? @hope= '' : @hope = @client.spots(n.lat, n.long)[0].name
-        Photo.find(n.id).update(google_name: "#{@hope}")
+        rawr = Photo.find(n.id).update(google_name: "#{@hope}")
+        Photo.find(n.id).google_name.present? ? nil : rawr
       elsif @result.businesses == []
         n.loc_name == nil ? @hope = @client.spots(n.lat, n.long)[0].name : @hope = @client.spots(n.lat, n.long, :name => n.loc_name)
-        Photo.find(n.id).update(google_name: "#{@hope}")
+        rawr = Photo.find(n.id).update(google_name: "#{@hope}")
+        Photo.find(n.id).google_name.present? ? nil : rawr
       else
         @yelpurl = @result.businesses[0].url
-        Photo.find(n.id).update(yelp_url: "#{@yelpurl}")
+        rawr = Photo.find(n.id).update(yelp_url: "#{@yelpurl}")
+        Photo.find(n.id).google_name.present? ? nil : rawr
       end
     end
   end

@@ -141,3 +141,7 @@ p {
   height: auto;
   margin: 0 0 10px;
 }
+
+.commentfrominsta {
+overflow: scroll; /* always show scrollbars */
+}
