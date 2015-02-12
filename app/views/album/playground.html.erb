@@ -6,33 +6,18 @@
 
     <% AlbumPhoto.all.where(uid: current_user.id).each do |n| %>
     <div class= 'col-xs-12 col-md-4'>
-      <%= n.album_id %>
+      <%= albumname = n.album_id %>
       <%= photoid = n.photo_id %>
       <% Photo.all.where(user: current_user.id, id: photoid).each do |y| %>
       <div class = 'polaroid'>
         <%= image_tag(y.url)%>
-
-      </br></br>
-      <h2>Crawl</h2>
+      </br>
+      <h2><%=albumname %> </h2>
       <p>fuji superia, nikon fe2</p>
       <br/>
     </div>
       <% end %>
     </div>
     <% end %>
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="polaroid">
-    <img src="https://dl.dropboxusercontent.com/u/68399045/ellen-185x170.jpg" />
-  </br></br></br><h2>E.</h2>
-    <p>fuji superia, nikon fe2</p>
-  </div>
-  <div class="polaroid">
-    <img src="https://dl.dropboxusercontent.com/u/68399045/crawl-185x170.jpg" />
-    <h2>Crawl</h2>
-    <p>fuji superia, nikon fe2</p>
   </div>
 </div>
