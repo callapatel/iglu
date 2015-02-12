@@ -1,5 +1,28 @@
 
 
+<div class = 'container'>
+  <div class='row'>
+<% Album.where(uid: current_user.id).each do |n| %>
+
+<div class= 'col-xs-12 col-md-4 col-lg-4'>
+  <%= why = n.a_name %>
+  <% yaya = AlbumPhoto.find_by(uid: current_user.id, album_id: why).photo_id%>
+  <% @y = Photo.find( yaya).url %>
+  <div class = 'polaroid'>
+    <%= image_tag(@y)%>
+  </div>
+  </br>
+
+</div>
+
+<% end %>
+
+</div>
+</div>
+
+
+
+
 <div class="container">
 
   <div class="row">
@@ -16,8 +39,8 @@
 
       <br/>
     </div>
-      <% end %>
-    </div>
     <% end %>
   </div>
+  <% end %>
+</div>
 </div>
