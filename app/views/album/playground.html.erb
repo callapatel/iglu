@@ -35,5 +35,10 @@
 
 
 <% AlbumPhoto.all.where(uid: current_user.id).each do |n| %>
-<%= n.album_id %>
-<% end %> 
+  <%= n.album_id %>
+  <%= photoid = n.photo_id %>
+  <% Photo.all.where(user: current_user.id, id: photoid).each do |y| %>
+    <%= image_tag(y.url)%>
+    <br/>
+    <% end %>
+<% end %>
