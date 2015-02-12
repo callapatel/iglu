@@ -11,10 +11,12 @@
       <label for='albumOption'>Add to a board</label>
       <select name="album_id">
         <center>
+          <option></option>
           <% @gr = Album.where(uid: current_user.id) %>
           <% @gr.all.each do |user| %>
             <% @their_album = user.a_name %>
             <% @their_a_id = user.id %>
+
             <option value= "<%= user.a_name %>">
               <%= user.a_name %>
             </option>

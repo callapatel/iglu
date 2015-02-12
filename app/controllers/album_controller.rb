@@ -32,9 +32,9 @@ class AlbumController < ApplicationController
   end
 
   def playground
-    @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY'])
-    @client.spots(36.112879823, -115.174448181, :name => @yelpname)
-    raise
+    @albums = Album.all
+    @ap = AlbumPhoto.all
+    
   end
 
 

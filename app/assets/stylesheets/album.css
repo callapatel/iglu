@@ -1,0 +1,41 @@
+.containing-div {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background-color: grey;
+  /*padding: 5px;*/
+  margin-left: 100px;
+  margin: 100px; 
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+#top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "/home/index",                to:"home#index",        as: :login
 
   post "/pinned/new",                to:"album#new"
-  get  "/albums/info",               to: "album#playground"
+  get "/albums",                     to: "album#playground"
 
   get "/auth/:provider",            to: "home#create",      as: :connect
   get "/auth/:provider/callback",   to: "home#create"
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get "/users/self/media/liked", to: "home#login", as: :root
 
-  
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
