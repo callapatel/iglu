@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get "/users/self/media/liked", to: "home#login", as: :root
 
+  get "/a/:feed_id",             to: 'album#show', as: :show
+
 
 
 

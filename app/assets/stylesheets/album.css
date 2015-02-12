@@ -37,3 +37,12 @@
   right: 2.1em;
   bottom: 1.2em;
   font: 1.5em monospace; }
+
+.headerdos {
+    position: relative;
+    /*top: 1.5em;*/
+    font-variant: small-caps;
+    letter-spacing: 0.2em;
+    text-align: center;
+    font-size: 20px;
+  }
