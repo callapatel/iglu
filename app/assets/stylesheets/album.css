@@ -1,41 +1,35 @@
-.containing-div {
-  width: 400px;
-  height: 400px;
+@charset "utf-8";
+
+@font-face {
+  font-family: 'Latin Modern Roman';
+  font-weight: normal; font-style: normal;
+}
+
+.row { text-align: center; }
+
+.polaroid {
+  display: inline-block;
+  position: relative; height: 300px; width: 260px;
+  background: transparent url("https://dl.dropboxusercontent.com/u/68399045/polaroids.jpg")  center center no-repeat;
+  overflow: hidden;
+
+  font: 62.5% "Latin Modern Roman", "Times New Roman", serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-text-stroke: 1px rgba(64, 64, 64, 0.2);
+}
+
+.polaroid img { display: block;
   position: relative;
-  background-color: grey;
-  /*padding: 5px;*/
-  margin-left: 100px;
-  margin: 100px; 
+  left: 39px;
+  top: 34px;
+  height: 185px;
+  width: 185px}
+
+.polaroid h2 {
+  position: relative; top: 1.5em;
+  font-variant: small-caps;
+  letter-spacing: 0.2em;
+  text-align: center;
 }
 
-.box {
-  width: 200px;
-  height: 200px;
-  padding: 0;
-  margin: 0;
-  display: block;
-}
-
-#top-left {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-#top-right {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#bottom-left {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-#bottom-right {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
+.polaroid p { position: absolute; right: 2.1em; bottom: 1.2em; font: 1.5em monospace; }

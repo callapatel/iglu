@@ -1,44 +1,34 @@
+
+
 <div class="container">
 
+  <div class="row">
 
-<div class ="containing-div">
-  <img id ="top-left" class="box" src="https://s-media-cache-ak0.pinimg.com/736x/72/3a/d2/723ad20c5a5d80990823283077b037a0.jpg" alt="top-left" />
-  <img id="top-right" class="box" src="https://s-media-cache-ak0.pinimg.com/736x/ef/7d/e9/ef7de9c6e27ee946ff321b1aaa0eaf3e.jpg" alt="top-right" />
-
-  <img id="bottom-left" class="box" src="http://1.bp.blogspot.com/-rNklzk5z3HI/VNslBEYeOYI/AAAAAAAAKzo/DCJp4JIcThM/s950/Wall%2Bhanging_150x200%2Bcm.jpg" alt="bottom-right" />
-
-  <img id="bottom-right" class="box" src="https://s-media-cache-ak0.pinimg.com/736x/f8/f2/d4/f8f2d41714aee2f143c1ead45273bdea.jpg" alt="bottom-left" />
-</div>
-
-
-<div class ="containing-div">
-  <img id ="top-left" class="box" src="https://s-media-cache-ak0.pinimg.com/736x/72/3a/d2/723ad20c5a5d80990823283077b037a0.jpg" alt="top-left" />
-  <img id="top-right" class="box" src="https://s-media-cache-ak0.pinimg.com/736x/ef/7d/e9/ef7de9c6e27ee946ff321b1aaa0eaf3e.jpg" alt="top-right" />
-
-  <img id="bottom-left" class="box" src="http://1.bp.blogspot.com/-rNklzk5z3HI/VNslBEYeOYI/AAAAAAAAKzo/DCJp4JIcThM/s950/Wall%2Bhanging_150x200%2Bcm.jpg" alt="bottom-right" />
-
-  <img id="bottom-right" class="box" src="https://s-media-cache-ak0.pinimg.com/736x/f8/f2/d4/f8f2d41714aee2f143c1ead45273bdea.jpg" alt="bottom-left" />
-</div>
-
-
-<div class ="containing-div">
-  <img id ="top-left" class="box" src="https://s-media-cache-ak0.pinimg.com/736x/72/3a/d2/723ad20c5a5d80990823283077b037a0.jpg" alt="top-left" />
-  <img id="top-right" class="box" src="https://s-media-cache-ak0.pinimg.com/736x/ef/7d/e9/ef7de9c6e27ee946ff321b1aaa0eaf3e.jpg" alt="top-right" />
-
-  <img id="bottom-left" class="box" src="http://1.bp.blogspot.com/-rNklzk5z3HI/VNslBEYeOYI/AAAAAAAAKzo/DCJp4JIcThM/s950/Wall%2Bhanging_150x200%2Bcm.jpg" alt="bottom-right" />
-
-  <img id="bottom-right" class="box" src="https://s-media-cache-ak0.pinimg.com/736x/f8/f2/d4/f8f2d41714aee2f143c1ead45273bdea.jpg" alt="bottom-left" />
-</div>
-
-</div>
-
-
-
-<% AlbumPhoto.all.where(uid: current_user.id).each do |n| %>
-  <%= n.album_id %>
-  <%= photoid = n.photo_id %>
-  <% Photo.all.where(user: current_user.id, id: photoid).each do |y| %>
-    <%= image_tag(y.url)%>
-    <br/>
+    <% AlbumPhoto.all.where(uid: current_user.id).each do |n| %>
+    <div class= 'col-xs-12 col-md-4'>
+      <%= n.album_id %>
+      <%= photoid = n.photo_id %>
+      <% Photo.all.where(user: current_user.id, id: photoid).each do |y| %>
+      <div class = 'polaroid'><%= image_tag(y.url)%></div>
+      <h2>Crawl</h2>
+      <p>fuji superia, nikon fe2</p>
+      <br/>
+      <% end %>
+    </div>
     <% end %>
-<% end %>
+  </div>
+</div>
+187x170
+
+<div class="row">
+  <div class="polaroid">
+    <img src="https://dl.dropboxusercontent.com/u/68399045/ellen-185x170.jpg" />
+    <h2>E.</h2>
+    <p>fuji superia, nikon fe2</p>
+  </div>
+  <div class="polaroid">
+    <img src="https://dl.dropboxusercontent.com/u/68399045/crawl-185x170.jpg" />
+    <h2>Crawl</h2>
+    <p>fuji superia, nikon fe2</p>
+  </div>
+</div>
