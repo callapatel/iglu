@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   get "/a/:feed_id",             to: 'album#show', as: :show
 
+  delete "/album",        to: "album#destroy", as: :delete
+
+
 
 
 

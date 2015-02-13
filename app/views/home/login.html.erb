@@ -14,18 +14,14 @@
         <%= @loc = n.loc_name %></br>
         <%= @lat = n.lat %></br>
         <%= @long = n.long %></br>
-        Google Location: <%=
-        n.google_name %>
+        <%=  n.google_name %>
         </br>
-      <%  if n.google_name == '' %>
-        <%=  puts 'unavial' %>
-        <% else %>
-          <%= puts #{n.google_name} %> 
+
         <%= n.yelp_url %></br>
         <i class="fa fa-yelp"></i>
 
         <div class='actions'>
-          <!-- OLD button with ajax working:          <!-- <%= button_to "Pin It", "/pinned/new" %> -->
+          <!-- OLD button with ajax working:          <%= button_to "Pin It", "/pinned/new" %> -->
 
           <!-- MODAL STARTS HERE -->
           <a id="fml"  href='javascript:void(0)' onClick="$('#modal-window-<%=n.id%>').modal()"
@@ -49,7 +45,7 @@
       </div>
     </div>
   </div>
-  <!-- <%# end %> -->
+
   <% end %>
 </div>
 <% end %>

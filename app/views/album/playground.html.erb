@@ -11,6 +11,7 @@
       <%= image_tag(@y)%>
       <h2>
         <%= link_to @albumnames , show_path(feed_id: @albumnames)%>
+        <%= button_to 'delete', delete_path(feed_id: @albumnames)%>
 
       </h2>
     </div>
