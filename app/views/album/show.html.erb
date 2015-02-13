@@ -1,4 +1,5 @@
 <div class='container'>
+  <h1><center> <%= params[:feed_id]%> Album </h1></center>
   <div class="row">
 <% AlbumPhoto.where(album_id: params[:feed_id]).each do |ap| %>
 

@@ -10,7 +10,8 @@ ul.rig li {
   background: #fff;
   border: 1px solid #ddd;
   font-size: 16px;
-  font-size: 1rem;
+  font-size: 6rem;
+  /*was 1rem*/
   vertical-align: top;
   box-shadow: 0 0 5px #ddd;
   box-sizing: border-box;
