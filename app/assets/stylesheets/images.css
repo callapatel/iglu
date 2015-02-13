@@ -77,5 +77,7 @@ ul.rig.columns-4 li {
   -webkit-box-sizing: border-box;
   width:100%;
   display: block;
+  max-height: 438px;
+  /*#you can take this out later*/
 
 }

@@ -1,19 +1,20 @@
 <div class='container'>
-
+  <div class="row">
 <% AlbumPhoto.where(album_id: params[:feed_id]).each do |ap| %>
-<div class="row">
-  <div class= 'col-xs-12 col-md-4'>
+
+  <div class= 'col-xs-12 col-md-4 col-lg-4'>
     <div class = 'class'>
 <% photoid = ap.photo_id %>
 <% photos = Photo.find(photoid) %>
 <% @image = photos.url%>
 <%= image_tag(@image) %>
-<%= photos.ig_user %>
-<%= photos.loc_name %>
-<%= photos.google_name %>
-<%= photos.yelp_url %>
+<%= photos.ig_user %></br>
+<%= photos.loc_name %></br>
+<%= photos.google_name %></br>
+<%= photos.yelp_url %></br>
   </div>
   </div>
+
 <% end %>
 </div>
 </div>
