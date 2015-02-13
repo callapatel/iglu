@@ -14,7 +14,13 @@
         <%= @loc = n.loc_name %></br>
         <%= @lat = n.lat %></br>
         <%= @long = n.long %></br>
-        <%= n.google_name %></br>
+        Google Location: <%=
+        n.google_name %>
+        </br>
+      <%  if n.google_name == '' %>
+        <%=  puts 'unavial' %>
+        <% else %>
+          <%= puts #{n.google_name} %> 
         <%= n.yelp_url %></br>
         <i class="fa fa-yelp"></i>
 
