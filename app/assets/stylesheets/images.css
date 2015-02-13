@@ -63,7 +63,7 @@ ul.rig.columns-4 li {
 
 /*callapalyayya*/
 
-.class {
+.classapple {
   display: inline-block;
   padding: 10px;
   margin: 0 0 2.5% 2.5%;
@@ -80,5 +80,24 @@ ul.rig.columns-4 li {
   display: block;
   max-height: 438px;
   /*#you can take this out later*/
+
+}
+
+.class {
+  display: inline-block;
+  padding: 10px;
+  margin: 0 0 2.5% 2.5%;
+  background: #fff;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  font-size: 1rem;
+  vertical-align: top;
+  box-shadow: 0 0 5px #ddd;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width:100%;
+  display: block;
+  
 
 }

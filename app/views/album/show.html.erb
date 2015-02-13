@@ -4,7 +4,7 @@
 <% AlbumPhoto.where(album_id: params[:feed_id]).each do |ap| %>
 
   <div class= 'col-xs-12 col-md-4 col-lg-4'>
-    <div class = 'class'>
+    <div class = 'classapple'>
 <% photoid = ap.photo_id %>
 <% photos = Photo.find(photoid) %>
 <% @image = photos.url%>
