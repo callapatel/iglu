@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   delete "/album",        to: "album#destroy", as: :delete
 
-
+  post "/album",           to: "album#destroy"
 
 
 

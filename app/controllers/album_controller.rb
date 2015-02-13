@@ -44,13 +44,13 @@ class AlbumController < ApplicationController
   def destroy
     AlbumPhoto.where(album_id: params[:feed_id]).each do |ap|
       ap.destroy
-      raise
+
     end
     Album.where(a_name: params[:feed_id]).each do |album|
       album.destroy
-      raise
+
     end
-    redirect_to root_path 
+    redirect_to root_path
   end
 
 
