@@ -44,14 +44,16 @@ class AlbumController < ApplicationController
   def destroy
     AlbumPhoto.where(album_id: params[:feed_id]).each do |ap|
       ap.destroy
-
     end
     Album.where(a_name: params[:feed_id]).each do |album|
       album.destroy
-
     end
     redirect_to root_path
   end
 
+  def deletea
+    AlbumPhoto.find_by(photo_id: params[:f_id]).destroy
+    redirect_to show_path(params[:feed_id])
+  end
 
 end

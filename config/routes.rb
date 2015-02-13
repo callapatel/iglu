@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get "/users/self/media/liked", to: "home#login", as: :root
 
   get "/a/:feed_id",             to: 'album#show', as: :show
+  delete "/a",                   to: "album#deletea", as: :deletion
+  post "/a",                     to: "album#deletea"       
 
   delete "/album",        to: "album#destroy", as: :delete
 
