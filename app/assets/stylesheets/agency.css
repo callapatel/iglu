@@ -760,3 +760,8 @@ img::selection {
 img::-moz-selection {
   background: 0 0;
 }
+
+
+.fog {
+  background-color: white; 
+}
