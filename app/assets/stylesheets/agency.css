@@ -319,6 +319,7 @@ section h3.section-subheading {
 .service-heading {
   margin: 15px 0;
   text-transform: none;
+  background-color: white;
 }
 @media(min-width:767px) {
   #portfolio .portfolio-item {
@@ -762,6 +763,6 @@ img::-moz-selection {
 }
 
 
-.fog {
-  background-color: white; 
+.container .back {
+  background-color: white;
 }
