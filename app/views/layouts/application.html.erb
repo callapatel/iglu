@@ -24,47 +24,11 @@
 
 <%= yield %>
 
-<div class="area"></div><nav class="main-menu">
-  <ul>
-    <li>
-      <a href="/users/self/media/liked">
-      <% link_to "root_path" %>
-        <i class="fa fa-home fa-2x"></i>
-        <span class="nav-text">
-          Dashboard
-        </span>
-      </a>
-
-    </li>
-    <li class="has-subnav">
-      <a href="/albums">
-        <i class="fa fa-folder-open fa-2x"></i>
-        <span class="nav-text">
-          My Albums
-        </span>
-      </a>
-
-    </li>
-      <a href="#">
-        <i class="fa fa-map-marker fa-2x"></i>
-        <span class="nav-text">
-          Maps
-        </span>
-      </a>
-    </li>
-
-
-  <ul class="logout">
-    <li>
-      <a href="/logout">
-        <i class="fa fa-power-off fa-2x"></i>
-        <span class="nav-text">
-          Logout
-        </span>
-      </a>
-    </li>
-  </ul>
-</nav>
+<% if session[:user_id] %>
+<%= render "home/signed_in" %>
+<% else %>
+<%= render "home/guest" %>
+<% end %>
 
 </body>
 </html>
