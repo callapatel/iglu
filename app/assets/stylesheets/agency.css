@@ -296,7 +296,7 @@ section {
 }
 
 section h2.section-heading {
-  margin-top: 0;
+  margin-top: 60px;
   margin-bottom: 15px;
   font-size: 40px;
 }
@@ -319,7 +319,7 @@ section h3.section-subheading {
 .service-heading {
   margin: 15px 0;
   text-transform: none;
-  background-color: white;
+  
 }
 @media(min-width:767px) {
   #portfolio .portfolio-item {

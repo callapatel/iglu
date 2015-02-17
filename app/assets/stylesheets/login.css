@@ -76,8 +76,8 @@ p {
 
 .containerzz {
   left: 50%;
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  top: 70%;
   transform: translate(-50%, -50%);
 }
 
