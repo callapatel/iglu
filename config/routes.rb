@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   post "/album",           to: "album#destroy"
 
   get "/search",            to: "photo#search"
-  post "/search",           to: "phtoto#view"
+  post "/search",           to: "photo#view"
 
 
 

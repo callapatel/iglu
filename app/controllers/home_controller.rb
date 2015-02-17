@@ -25,9 +25,9 @@ class HomeController < ApplicationController
     if require_login
       if this_user_atm.present?
         @photos = Photo.paginate(:page => params[:page], :per_page => 30)
-        Photo.api_call_to_db_update(token, this_user_atm)
-        Photo.yelp
-        Photo.google
+        #Photo.api_call_to_db_update(token, this_user_atm)
+        #Photo.yelp
+        #Photo.google
       else
         Photo.api_call_to_db_update(token, this_user_atm)
         Photo.google
