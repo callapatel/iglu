@@ -76,6 +76,8 @@ class Photo < ActiveRecord::Base
   end
 
   def self.yelp
+
+
     Photo.all.each do |n|
       coordinates = { latitude: n.lat, longitude: n.long}
       @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY'])

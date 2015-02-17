@@ -27,6 +27,6 @@ every 3.hour do
   runner "Photo.google"
 end
 
-every 1.day do
-  runner "Photo.yelp"
-end
+# every 1.day do
+#   runner "Photo.yelp"
+# end
