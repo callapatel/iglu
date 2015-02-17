@@ -14,11 +14,14 @@ Rails.application.routes.draw do
 
   get "/a/:feed_id",             to: 'album#show', as: :show
   delete "/a",                   to: "album#deletea", as: :deletion
-  post "/a",                     to: "album#deletea"       
+  post "/a",                     to: "album#deletea"
 
   delete "/album",        to: "album#destroy", as: :delete
 
   post "/album",           to: "album#destroy"
+
+  get "/search",            to: "photo#search"
+  post "/search",           to: "phtoto#view"
 
 
 

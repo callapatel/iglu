@@ -1,0 +1,6 @@
+<% @articles.each do |article| %>
+<div class="article">
+  <h1 class="article-title"><%= article.google_name %></h1>
+  <p class="article-content"><%= article.caption%></p>
+</div>
+<% end %>
