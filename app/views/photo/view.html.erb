@@ -1,6 +1,8 @@
-<% @articles.each do |article| %>
-
-<%= article.google_name %>
-<%= article.id%>
-
+<% if @articles.count == 0 %>
+  <%= "Sorry, you don't have any photos with that location information" %>
+<% else %>
+  <% @articles.each do |article| %>
+  <%= article.google_name %>
+  <%= article.id %>
+  <% end %>
 <% end %>

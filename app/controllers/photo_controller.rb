@@ -12,9 +12,10 @@ class PhotoController < ApplicationController
 
   def view
     if params[:search]
-      @articles = Photo.where("google_name = ?", params[:search])
+      @articles = Photo.where("google_name = ? or loc_name = ?", params[:search], params[:search])
+    
     else
-      @articles = Photo.order("created_at DESC")
+      puts "Sorry, you don't have any photos with that location currently."
     end
   end
 end
