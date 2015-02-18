@@ -119,3 +119,7 @@ ul.rig.columns-4 li {
   height: 36px;*/
   float: right;
 }
+
+.yelpbutton .fa {
+  color: rgb(16, 51, 76);
+}
