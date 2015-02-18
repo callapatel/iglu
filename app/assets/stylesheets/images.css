@@ -109,3 +109,10 @@ ul.rig.columns-4 li {
   color: blue;
   padding: 8px 90px;
 }
+
+.yelpborder {
+  border: 1px solid transparent;
+  padding: 8px 10px;
+  background-color: white;
+  color: green; 
+}
