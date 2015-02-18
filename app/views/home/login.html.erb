@@ -12,9 +12,11 @@
           <%= n.caption %></br>
         </div>
         <% @loc = n.loc_name %></br>
-        <% if @loc != '' or @loc != 'nil'  %>
-          <%= puts 'Instagram Location:' %>
-          <%= @loc %> 
+        <% if @loc.present? or @loc != nil  %>
+          <b>Instagram Location:</b>
+          <%= @loc %>
+        <% else %>
+          Instagram data not present.
         <% end %> </br></br> </br>
         <%= @lat = n.lat %></br>
         <%= @long = n.long %></br>
