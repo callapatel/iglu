@@ -112,12 +112,17 @@ ul.rig.columns-4 li {
 
 .yelpbutton {
   border: 1px solid transparent;
-  padding: 1px 1px;
+  padding: 3px 3px;
   background-color: white;
-  color: green;
+  color: blue;
   /*width: 40px;
   height: 36px;*/
   float: right;
+  border-color: #357ebd;
+  box-sizing: border-box;
+  width: 80px;
+  height: 38px;
+
 }
 
 .yelpbutton .fa {
