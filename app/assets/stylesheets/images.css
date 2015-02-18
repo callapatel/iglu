@@ -1,3 +1,7 @@
+body, html {
+  font-family: 'Cabin', sans-serif; !important
+}
+
 ul.rig {
   list-style: none;
   font-size: 0px;
@@ -98,4 +102,9 @@ ul.rig.columns-4 li {
   display: block;
 
 
+}
+
+.prettyblue {
+  background-color: white;
+  color: blue;
 }
