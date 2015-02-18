@@ -1,7 +1,7 @@
 require 'dotenv'
 Dotenv.load
 
-set :whenever_command, "bundle exec whenever"
+#set :whenever_command, "bundle exec whenever"
 require "whenever/capistrano"
 
 # config valid only for current version of Capistrano
