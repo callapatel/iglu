@@ -1,5 +1,5 @@
 body, html {
-  font-family: 'Cabin', sans-serif !important; 
+  font-family: 'Cabin', sans-serif !important;
 }
 
 ul.rig {
@@ -107,4 +107,5 @@ ul.rig.columns-4 li {
 .prettyblue {
   background-color: white;
   color: blue;
+  padding: 8px 90px;
 }
