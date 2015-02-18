@@ -122,6 +122,7 @@ p {
   margin-bottom: 2em;
   text-transform: uppercase;
   width: 280px;
+  position: inherit;
 }
 
 #loginzz form input[type="submit"]:hover {
