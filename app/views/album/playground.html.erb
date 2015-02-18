@@ -2,21 +2,24 @@
 
 <div class = headerdos><h2> <center> Your albums </center> </h2></div>
 <div class='row'>
-  <div class= 'col-xs-12 col-md-4 col-lg-4'>
   <% Album.where(uid: current_user.id).each do |n| %>
+    <div class= 'col-xs-12 col-md-4 col-lg-4'>
+      <div class = 'class'>
     <% @albumnames = n.a_name %>
 
       <% yaya = AlbumPhoto.find_by(uid: current_user.id, album_id: @albumnames).photo_id%>
 
       <% @y = Photo.find(yaya).url %>
       <div class = 'polaroid'>
-        <%= image_tag(@y)%>
+        <%= image_tag(@y)%> </br></br></br></br></br></br></br></br></br></br></br></br>
         <%= link_to @albumnames , show_path(feed_id: @albumnames)%>
         <%= button_to 'delete', delete_path(feed_id: @albumnames)%>
       </div>
+    </div>
+  </div>
     <% end %>
   </br>
-</div>
+
 
 </div>
 </div>

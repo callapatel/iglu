@@ -8,8 +8,9 @@
 .rowsy { text-align: center;  }
 
 .polaroid {
-  display: inline-block;
-  position: relative; height: 300px; width: 260px;
+  /*display: inline-block;*/
+  position: relative; height: 300px;
+  /*width: 260px;*/
   background: transparent url("https://dl.dropboxusercontent.com/u/68399045/polaroids.jpg")  center center no-repeat;
   overflow: hidden;
 
@@ -20,7 +21,8 @@
 
 .polaroid img { display: block;
   position: relative;
-  left: 39px;
+  left: 78px;
+  /*changed left from 39. */
   top: 34px;
   height: 185px;
   width: 185px}

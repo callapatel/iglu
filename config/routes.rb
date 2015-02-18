@@ -2,26 +2,26 @@ Rails.application.routes.draw do
 
   get "/home/index",                to:"home#index",        as: :login
 
-  post "/pinned/new",                to:"album#new"
-  get "/albums",                     to: "album#playground"
+  post "/pinned/new",               to:"album#new"
+  get "/albums",                    to: "album#playground"
 
   get "/auth/:provider",            to: "home#create",      as: :connect
   get "/auth/:provider/callback",   to: "home#create"
 
   get "/logout",                    to: "home#destroy", as: :logout
 
-  get "/users/self/media/liked", to: "home#login", as: :root
+  get "/users/self/media/liked",    to: "home#login", as: :root
 
-  get "/a/:feed_id",             to: 'album#show', as: :show
-  delete "/a",                   to: "album#deletea", as: :deletion
-  post "/a",                     to: "album#deletea"
+  get "/a/:feed_id",                to: 'album#show', as: :show
+  delete "/a",                      to: "album#deletea", as: :deletion
+  post "/a",                        to: "album#deletea"
 
-  delete "/album",        to: "album#destroy", as: :delete
+  delete "/album",                  to: "album#destroy", as: :delete
 
-  post "/album",           to: "album#destroy"
+  post "/album",                    to: "album#destroy"
 
-  get "/search",            to: "photo#search"
-  post "/search",           to: "photo#view"
+  get "/search",                    to: "photo#search"
+  post "/search",                   to: "photo#view"
 
 
 

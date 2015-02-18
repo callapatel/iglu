@@ -1,20 +1,49 @@
 <div class ='container'>
   <div class = 'row'>
-  <% if @articles.count == 0 %>
+    <% if @articles.count == 0 %>
     <%= "Sorry, you don't have any photos with that location information" %>
-  <% else %>
+    <% else %>
 
     <% @articles.each do |article| %>
     <div class= 'col-xs-12 col-md-4 col-lg-4'>
-      <div class = 'classapple'>
+      <div class = 'class'>
         <%= image_tag(article.url) %></br>
-        <%= article.ig_user %></br>
-        <%= article.google_name %></br> 
+        <b><%= article.ig_user %></b></br>
+        <%= article.google_name %></br>
         <%= article.loc_name %></br>
+        <%= article.caption %>
+
+        <div class='actions'>
+          <!-- OLD button with ajax working:          <%= button_to "Pin It", "/pinned/new" %> -->
+
+          <!-- MODAL STARTS HERE -->
+          <a id="fml"  href='javascript:void(0)' onClick="$('#modal-window-<%=article.id%>').modal()"
+            <button type="button" class="btn btn-primary prettyblue" data-toggle="modal" data-target="#addListItem" data-id="<%= article.id %>"  target= "#addListItem">
+              +Album
+            </button>
+          </a>
+
+          <div id='modal-window-<%=article.id%>' class='modal fade' id="addListItem" role='dialog' aria-labelledby='myModalLabel' aria-hidden
+            ='true' >
+            <div class='modal-dialog'>
+              <div class='modal-content'>
+                <%= render '/album/pua', locals: {photo_id: article.id}  %>
+              </div>
+            </div>
+          </div>
+          <!-- MODAL ENDS HERE -->
+
+          <% @pid = article.id %>
+          <%= hidden_field_tag "[pid]", article.id, class: "info" %>
+
+        </div>
       </div>
     </div>
-        <% end %>
 
-  <% end %>
-</div>
+
+
+    <% end %>
+
+    <% end %>
+  </div>
 </div>
