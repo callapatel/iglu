@@ -1,5 +1,4 @@
-require 'dotenv'
-Dotenv.load
+
 
 Yelp.client.configure do |config|
   puts 'hello'
