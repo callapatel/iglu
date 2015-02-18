@@ -14,13 +14,14 @@
         <%= @loc = n.loc_name %></br>
         <%= @lat = n.lat %></br>
         <%= @long = n.long %></br>
-        Google!!!: <%=  n.google_name %>
+        <b>Google Places Name:</b> <%=  n.google_name %>
         </br>
 
         <%= n.yelp_url %></br>
 
+
         <a href="<%= n.yelp_url %>">
-        <i class="fa fa-yelp fa-3x"></i>
+        <div class= 'btn btn-primary yelpbutton'><i class="fa fa-yelp fa-2x"></i></div>
 
 
         <div class='actions'>
@@ -32,6 +33,7 @@
               +Album
             </button>
           </a>
+
           <div id='modal-window-<%=n.id%>' class='modal fade' id="addListItem" role='dialog' aria-labelledby='myModalLabel' aria-hidden
           ='true' >
           <div class='modal-dialog'>
