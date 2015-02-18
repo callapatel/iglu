@@ -12,14 +12,15 @@
           <%= n.caption %></br>
         </div>
         <% @loc = n.loc_name %></br>
-        <% if @loc.present? or @loc != nil  %>
-          <b>Instagram Location:</b>
-          <%= @loc %>
-        <% else %>
-          Instagram data not present.
-        <% end %> </br></br> </br>
-        <%= @lat = n.lat %></br>
-        <%= @long = n.long %></br>
+          <% if @loc.present? && @loc != nil  %>
+            <b>Instagram Location:</b>
+            <%= @loc %>
+          <% else %>
+            Instagram data not present.
+          <% end %>
+      
+         <% @lat = n.lat %>
+         <% @long = n.long %>
         <% if n.google_name != "" %>
           <b>Google Places Name:</b> <%=  n.google_name %>
         <% else %>
