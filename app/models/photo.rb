@@ -76,7 +76,7 @@ class Photo < ActiveRecord::Base
   end
 
   def self.yelp
-
+    puts 'running yelp here'
 
     Photo.all.each do |n|
       coordinates = { latitude: n.lat, longitude: n.long}
@@ -100,7 +100,11 @@ class Photo < ActiveRecord::Base
   end
 
 
-
+  def self.test
+    ENV.each do |env|
+        puts env
+    end
+  end
 
 
 
