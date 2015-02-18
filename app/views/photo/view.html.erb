@@ -1,8 +1,20 @@
-<% if @articles.count == 0 %>
-  <%= "Sorry, you don't have any photos with that location information" %>
-<% else %>
-  <% @articles.each do |article| %>
-  <%= article.google_name %>
-  <%= article.id %>
+<div class ='container'>
+  <div class = 'row'>
+  <% if @articles.count == 0 %>
+    <%= "Sorry, you don't have any photos with that location information" %>
+  <% else %>
+
+    <% @articles.each do |article| %>
+    <div class= 'col-xs-12 col-md-4 col-lg-4'>
+      <div class = 'classapple'>
+        <%= image_tag(article.url) %></br>
+        <%= article.ig_user %></br>
+        <%= article.google_name %></br> 
+        <%= article.loc_name %></br>
+      </div>
+    </div>
+        <% end %>
+
   <% end %>
-<% end %>
+</div>
+</div>
