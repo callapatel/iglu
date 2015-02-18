@@ -27,15 +27,11 @@
           Google Location is unavailable.
         <% end %>
         </br>
-        <% if n.yelp_url.present? && n.yelp_url != nil %>
-          <% @divclassit = 'fa fa-yelp fa-2x' %>
-        <% else %>
-          <% @divclassit = 'fa fa-yelp fa-2x' %>
-        <% end %>
+
         <%= n.yelp_url %>
 
           <a href="<%= n.yelp_url %>">
-            <div class= 'btn btn-primary yelpbutton'><i class="fa fa-yelp fa-2x"></i></div>
+            <div class= 'btn btn-primary yelpbutton'><i class="fa fa-yelp fa-2x"></i></div></a>
 
 
 
