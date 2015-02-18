@@ -7,18 +7,18 @@
       <div class='class' data-id="<%= @yay = n.id %>">
 
         <%= image_tag n.url %></br>
-        <%= n.ig_user %></br>
+        <strong><%= n.ig_user %></strong></br>
         <div class ='commentfrominsta'>
-          <%= n.caption %></br>
+          <%= n.caption %>
         </div>
         <% @loc = n.loc_name %></br>
           <% if @loc.present? && @loc != nil  %>
-            <b>Instagram Location:</b>
-            <%= @loc %>
+            <strong>Instagram Location:</strong>
+            <%= @loc %></br>
           <% else %>
-            Instagram data not present.
+            Instagram data not present.</br>
           <% end %>
-      
+
          <% @lat = n.lat %>
          <% @long = n.long %>
         <% if n.google_name != "" %>
@@ -27,13 +27,18 @@
           Google Location is unavailable.
         <% end %>
         </br>
+        <% if n.yelp_url.present? && n.yelp_url != nil %>
+          <% @divclassit = 'fa fa-yelp fa-2x' %>
+        <% else %>
+          <% @divclassit = 'fa fa-yelp fa-2x' %>
+        <% end %>
         <%= n.yelp_url %>
-        <% if n.yelp_url != " "%></br>
+
           <a href="<%= n.yelp_url %>">
             <div class= 'btn btn-primary yelpbutton'><i class="fa fa-yelp fa-2x"></i></div>
-        <% else %>
-          <div class= 'btn btn-primary yelpbutton'><i class="fa fa-yelp fa-2x greyit"></i></div>
-        <% end %>
+
+
+
 
 
         <div class='actions'>
