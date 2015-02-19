@@ -12,15 +12,15 @@
           <%= n.caption %>
         </div>
         <% @loc = n.loc_name %></br>
-          <% if @loc.present? && @loc != nil  %>
-            <strong>Instagram Location:</strong>
-            <%= @loc %></br>
-          <% else %>
-            Instagram data not present.</br>
-          <% end %>
+        <% if @loc.present? && @loc != nil  %>
+                   <b>Instagram Location:</b>
+                    <%= @loc %>
+                  <% else %>
+                    Instagram data not present.
+                  <% end %>
 
-         <% @lat = n.lat %>
-         <% @long = n.long %>
+                 <% @lat = n.lat %>
+                <% @long = n.long %>
         <% if n.google_name != "" %>
           <b>Google Places Name:</b> <%=  n.google_name %>
         <% else %>
@@ -29,10 +29,12 @@
         </br>
 
         <%= n.yelp_url %>
-
-          <a href="<%= n.yelp_url %>">
-            <div class= 'btn btn-primary yelpbutton'><i class="fa fa-yelp fa-2x"></i></div></a>
-
+        <% if n.yelp_url != " "%></br>
+        <a href="<%= n.yelp_url %>">
+          <div class= 'btn btn-primary yelpbutton'><i class="fa fa-yelp fa-2x"></i></div>
+          <% else %>
+          <div class= 'btn btn-primary yelpbutton'><i class="fa fa-yelp fa-2x greyit"></i></div>
+          <% end %>
 
 
 
@@ -41,6 +43,7 @@
           <!-- OLD button with ajax working:          <%= button_to "Pin It", "/pinned/new" %> -->
 
           <!-- MODAL STARTS HERE -->
+
           <a id="fml"  href='javascript:void(0)' onClick="$('#modal-window-<%=n.id%>').modal()"
             <button type="button" class="btn btn-primary prettyblue" data-toggle="modal" data-target="#addListItem" data-id="<%= n.id %>"  target= "#addListItem">
               +Album
@@ -65,6 +68,7 @@
   </div>
 
   <% end %>
+
 </div>
 <% end %>
 
