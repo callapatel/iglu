@@ -1,5 +1,6 @@
 body, html {
   font-family: 'Cabin', sans-serif !important;
+
 }
 
 ul.rig {
@@ -92,7 +93,7 @@ ul.rig.columns-4 li {
   margin: 0 0 2.5% 2.5%;
   background: #fff;
   border: 1px solid #ddd;
-  font-size: 11.5px;
+  font-size: 13px;
   vertical-align: top;
   box-shadow: 0 0 5px #ddd;
   box-sizing: border-box;
