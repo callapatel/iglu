@@ -129,3 +129,7 @@ ul.rig.columns-4 li {
 .yelpbutton .fa {
   color: rgb(16, 51, 76);
 }
+
+.span2{
+  border: 2px solid #357ebd;; 
+}
