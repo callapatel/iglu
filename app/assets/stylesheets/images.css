@@ -131,5 +131,9 @@ ul.rig.columns-4 li {
 }
 
 .span2{
-  border: 2px solid #357ebd;; 
+  border: 2px solid #357ebd;;
+}
+
+.greyit {
+  background-color: grey;
 }

@@ -19,8 +19,8 @@
                     Instagram data not present.
                   <% end %>
 
-                 <% @lat = n.lat %>
-                <% @long = n.long %>
+        <% @lat = n.lat %>
+        <% @long = n.long %>
         <% if n.google_name != "" %>
           <b>Google Places Name:</b> <%=  n.google_name %>
         <% else %>
@@ -29,11 +29,12 @@
         </br>
 
         <%= n.yelp_url %>
-        <% if n.yelp_url != " "%></br>
+        <% if n.yelp_url != "" && n.yelp_url != nil%></br>
+      
         <a href="<%= n.yelp_url %>">
-          <div class= 'btn btn-primary yelpbutton'><i class="fa fa-yelp fa-2x"></i></div>
+          <div class= 'btn btn-primary yelpbutton prettyblue'><i class="fa fa-yelp fa-2x"></i></div>
           <% else %>
-          <div class= 'btn btn-primary yelpbutton'><i class="fa fa-yelp fa-2x greyit"></i></div>
+          <div class= 'btn btn-primary yelpbutton prettyblue greyit'><i class="fa fa-yelp fa-2x greyit"></i></div>
           <% end %>
 
 
