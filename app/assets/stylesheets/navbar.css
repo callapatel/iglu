@@ -102,7 +102,7 @@ nav {
   -ms-user-select:none;
   -o-user-select:none;
   user-select:none;
-  position: fixed; 
+  position: fixed;
 }
 
 nav ul,nav li {
@@ -124,4 +124,9 @@ nav ul,nav li {
   font-family: 'Titillium Web';
   font-style: normal;
   font-weight: 300;
+}
+
+.modal-content{
+  height: 400px;
+  width: 730px;
 }
