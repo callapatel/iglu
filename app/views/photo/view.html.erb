@@ -1,12 +1,12 @@
 <div class ='container'>
   <div class = 'row'>
-    <% if @articles.count == 0 %>
+    <% if @articles.where(user: current_user.id).count == 0 %>
     <%= "Sorry, you don't have any photos with that location information" %>
     <% else %>
 
-    <% @articles.each do |article| %>
+    <% @articles.where(user: current_user.id).each do |article| %>
     <div class= 'col-xs-12 col-md-4 col-lg-4'>
-      <div class = 'class'>
+      <div class = 'classapple'>
         <%= image_tag(article.url) %></br>
         <b><%= article.ig_user %></b></br>
         <%= article.google_name %></br>
