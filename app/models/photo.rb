@@ -17,11 +17,11 @@ class Photo < ActiveRecord::Base
           location_latitude = n['location']['latitude']
           location_longitude = n['location']['longitude']
           n['caption'].present? ? caption = n['caption']['text'] : "nil"
-          n['caption'].present? ? ig_user = n['caption']['from']['username'] : nil
+          n['caption'].present? ? ig_user = n['caption']['from']['username'] : ig_user = n['user']['full_name']
           Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, loc_name: "#{location_name}", lat: "#{location_latitude}", long: "#{location_longitude}", caption: "#{caption}", ig_user: "#{ig_user}")
         else
           n['caption'].present? ? caption = n['caption']['text'] : "nil"
-          n['caption'].present? ? ig_user = n['caption']['from']['username'] : nil
+          n['caption'].present? ? ig_user = n['caption']['from']['username'] : ig_user = n['user']['full_name']
           Photo.find_or_create_by(url: "#{welcome}", user: this_user_atm, ig_user: "#{ig_user}", caption: "#{caption}" )
         end
       end
@@ -61,16 +61,16 @@ class Photo < ActiveRecord::Base
 
 
 
-  def self.google
+  def self.google(this_user_atm)
     puts "googleit"
-    Photo.all.each do |n|
+    Photo.where(user: this_user_atm).each do |n|
       @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY'])
       if n.lat == "" or n.lat == nil
         @hope1 = ""
-        Photo.find(n.id).update(google_name: "#{@hope1}")
+        Photo.find_or_create_by(id: n.id, google_name: "#{@hope1}")
       else
         @hope1 = @client.spots(n.lat, n.long)[0].name
-        Photo.find(n.id).update(google_name: "#{@hope1}")
+        Photo.find_or_create_by(id: n.id, google_name: "#{@hope1}")
       end
     end
   end
