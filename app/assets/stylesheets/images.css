@@ -138,3 +138,13 @@ ul.rig.columns-4 li {
 .greyit {
   background-color: grey;
 }
+
+.boss {
+  width: 80px;
+  height: 40px;
+  float: right;
+}
+
+.albumview {
+  height: 500px;
+}

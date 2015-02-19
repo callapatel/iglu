@@ -5,18 +5,25 @@
 <div class='row'>
   <% Album.where(uid: current_user.id).each do |n| %>
     <div class= 'col-xs-12 col-md-4 col-lg-4'>
-      <div class = 'class'>
+      <div class = 'class albumview'>
         <% @albumnames = n.a_name %>
         <% yaya = AlbumPhoto.find_by(uid: current_user.id, album_id: @albumnames).photo_id%>
 
         <% @y = Photo.find(yaya).url %>
         <div class = 'polaroid'>
           <%= image_tag(@y)%> </br></br></br></br></br></br></br></br></br></br></br></br>
-          <%= @albumnames %> 
-          <h4><%= link_to @albumnames , show_path(feed_id: @albumnames)%></h4>
-          <%= button_to 'delete', delete_path(feed_id: @albumnames)%>
+
+
 
         </div>
+        <%= @albumnames %>
+        <h4><%= link_to @albumnames , show_path(feed_id: @albumnames)%></h4>
+
+        <%= button_to 'delete', delete_path(feed_id: @albumnames), {class: 'btn boss'}%>
+
+
+
+
       </div>
     </div>
   <% end %>
