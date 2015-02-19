@@ -8,8 +8,8 @@ class HomeController < ApplicationController
   def create
     auth_hash = request.env['omniauth.auth']
     @user = User.find_by(uid: auth_hash['uid']).present?
-    if @user.present?
-      session[:user_id] = @user.id
+    if @user == true
+      session[:user_id] = User.find_by(uid: auth_hash['uid']).id
     else
       @user = User.createuser_from_omniauth(auth_hash)
       session[:user_id] = @user.id
