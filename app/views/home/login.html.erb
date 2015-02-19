@@ -30,12 +30,14 @@
 
         <%= n.yelp_url %>
         <% if n.yelp_url != "" && n.yelp_url != nil%></br>
-      
+
         <a href="<%= n.yelp_url %>">
           <div class= 'btn btn-primary yelpbutton prettyblue'><i class="fa fa-yelp fa-2x"></i></div>
-          <% else %>
-          <div class= 'btn btn-primary yelpbutton prettyblue greyit'><i class="fa fa-yelp fa-2x greyit"></i></div>
-          <% end %>
+        <% else %>
+        <div class='toolis' data-toggle="tooltip" data-placement="top"  title="yelp data not available">
+          <div class= 'btn btn-primary yelpbutton prettyblue a' ><i class="fa fa-yelp fa-2x"></i></div>
+        </div>
+        <% end %>
 
 
 
