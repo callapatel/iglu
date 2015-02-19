@@ -1,4 +1,5 @@
-<div class = 'container'>
+<body>
+  <div class = 'container'>
 
 <div class = headerdos><h2> <center> Your albums </center> </h2></div>
 <div class='row'>
@@ -11,7 +12,7 @@
         <% @y = Photo.find(yaya).url %>
         <div class = 'polaroid'>
           <%= image_tag(@y)%> </br></br></br></br></br></br></br></br></br></br></br></br>
-          
+
           <%= link_to @albumnames , show_path(feed_id: @albumnames)%>
           <%= button_to 'delete', delete_path(feed_id: @albumnames)%>
 
@@ -22,3 +23,4 @@
 
   </div>
 </div>
+</body> 

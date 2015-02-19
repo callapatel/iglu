@@ -14,7 +14,6 @@ class PhotoController < ApplicationController
     @abe = params[:search]
     if params[:search]
       @articles = Photo.where("google_name ILIKE ? or loc_name ILIKE ? or ig_user ILIKE ? or caption ILIKE ? or ig_user ILIKE ? or url ILIKE ? ", "%#{@abe}%", "%#{@abe}%", "%#{@abe}%", "%#{@abe}%", "%#{@abe}%", "%#{@abe}%")
-      
     else
       puts "Sorry, you don't have any photos with that location currently."
     end

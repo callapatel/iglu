@@ -32,7 +32,9 @@
   font-variant: small-caps;
   letter-spacing: 0.2em;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
 }
 
@@ -51,5 +53,7 @@
     font-variant: small-caps;
     letter-spacing: 0.2em;
     text-align: center;
-    font-size: 20px;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
