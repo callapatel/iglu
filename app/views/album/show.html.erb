@@ -1,7 +1,7 @@
 <div class='container'>
-  <h1><center> <%= params[:feed_id]%> Album </h1></center>
+  <h1><center><div class = headerdos> <%= params[:feed_id]%> Album </div></center>
   <div class="row">
-    <% @albumnames = params[:feed_id] %> 
+    <% @albumnames = params[:feed_id] %>
 <% AlbumPhoto.where(album_id: params[:feed_id]).each do |ap| %>
 
   <div class= 'col-xs-12 col-md-4 col-lg-4'>
