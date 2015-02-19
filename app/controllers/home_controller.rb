@@ -7,14 +7,14 @@ class HomeController < ApplicationController
 
   def create
     auth_hash = request.env['omniauth.auth']
-    @user = User.find_by(uid: auth_hash['uid'])
-    if @user == nil
+    @user = User.find_by(uid: auth_hash['uid']).present?
+    if @user.present?
+      session[:user_id] = @user.id
+    else
       @user = User.createuser_from_omniauth(auth_hash)
       session[:user_id] = @user.id
       token = current_user.token
       Photo.api_call_to_db_update(token, current_user.id)
-    else
-      session[:user_id] = @user.id
     end
     redirect_to root_path
   end
