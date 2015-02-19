@@ -5,32 +5,34 @@
     <!-- <%# cache(n) do %> -->
     <div class= 'col-xs-12 col-md-4 col-lg-4'>
       <div class='class' data-id="<%= @yay = n.id %>">
-
-        <%= image_tag n.url %></br>
-        <strong><%= n.ig_user %></strong></br>
+        <%= image_tag n.url %>
+        </br>
+        <strong>
+          <%= n.ig_user %>
+        </strong>
+        </br>
         <div class ='commentfrominsta'>
           <%= n.caption %>
         </div>
-        <% @loc = n.loc_name %></br>
+        <% @loc = n.loc_name %>
+        </br>
         <% if @loc.present? && @loc != nil  %>
-                   <b>Instagram Location:</b>
-                    <%= @loc %>
-                  <% else %>
-                    Instagram data not present.
-                  <% end %>
-
+            <b>Instagram Location:</b>
+            <%= @loc %></br>
+        <% else %>
+            Instagram data not present.</br>
+        <% end %>
         <% @lat = n.lat %>
         <% @long = n.long %>
         <% if n.google_name != "" %>
-          <b>Google Places Name:</b> <%=  n.google_name %>
+          <b>Google Places Name:</b> <%=  n.google_name %></br>
         <% else %>
-          Google Location is unavailable.
+          Google Location is unavailable.</br>
         <% end %>
         </br>
 
-        <%= n.yelp_url %>
-        <% if n.yelp_url != "" && n.yelp_url != nil%></br>
-
+        <% n.yelp_url %>
+        <% if n.yelp_url != "" && n.yelp_url != nil%>
         <a href="<%= n.yelp_url %>">
           <div class= 'btn btn-primary yelpbutton prettyblue'><i class="fa fa-yelp fa-2x"></i></div>
         <% else %>
