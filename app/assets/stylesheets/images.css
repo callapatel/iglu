@@ -146,11 +146,53 @@ ul.rig.columns-4 li {
 }
 
 .albumview {
-  height: 500px;
+  height: 370px;
 }
 
 .delete{
   float: right;
   width: 20px;
   height: 10px;
+}
+
+.albumnamelink a{
+  color: blue;
+}
+
+.albumnamelink visited {
+  color: blue;
+}
+
+/* mouse over link */
+.albumnamelink a:hover {
+  color: orange;
+}
+
+/* selected link */
+.albumnamelink active {
+  color: blue;
+}
+
+.deletealbum{
+  width: 90px;
+  height: 20px;
+  background-color: white;
+  color: blue;
+  border: 1px solid transparent;
+  background-color: white;
+  color: blue;
+  /*width: 40px;
+  height: 36px;*/
+  float: right;
+  border-color: #357ebd;
+  box-sizing: border-box;
+
+}
+
+.singleimg {
+  max-height: 480px;
+}
+
+.toolis {
+  font-size: 12px; 
 }
