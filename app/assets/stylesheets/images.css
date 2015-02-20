@@ -148,3 +148,9 @@ ul.rig.columns-4 li {
 .albumview {
   height: 500px;
 }
+
+.delete{
+  float: right;
+  width: 20px;
+  height: 10px;
+}

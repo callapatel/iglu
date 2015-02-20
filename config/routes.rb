@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get "/logout",                    to: "home#destroy", as: :logout
 
   get "/users/self/media/liked",    to: "home#login", as: :root
+  delete "/users/delete",           to: "home#delete", as: :onelast
+  post "/users/delete",             to: "home#delete" 
+
 
   get "/a/:feed_id",                to: 'album#show', as: :show
   delete "/a",                      to: "album#deletea", as: :deletion

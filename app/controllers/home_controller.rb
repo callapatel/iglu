@@ -44,4 +44,9 @@ class HomeController < ApplicationController
     redirect_to login_path
   end
 
+  def delete
+    Photo.find(params[:pictured]).destroy
+    redirect_to root_path
+  end
+
 end

@@ -5,6 +5,7 @@
     <!-- <%# cache(n) do %> -->
     <div class= 'col-xs-12 col-md-4 col-lg-4'>
       <div class='class' data-id="<%= @yay = n.id %>">
+        <%= button_to "-", onelast_path(pictured: n.id), {:class => "btn btn-primary yelpbutton prettyblue delete" } %>
         <%= image_tag n.url %>
         </br>
         <strong>
@@ -44,8 +45,11 @@
 
 
 
+
+
+
         <div class='actions'>
-          <!-- OLD button with ajax working:          <%= button_to "Pin It", "/pinned/new" %> -->
+                 <!-- <%= button_to "-", onelast_path(pictured: n.id), {:class => "btn btn-primary yelpbutton prettyblue" } %> -->
 
           <!-- MODAL STARTS HERE -->
 
