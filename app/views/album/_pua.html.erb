@@ -1,14 +1,14 @@
 
 <div class='modal-header'>
   <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>x</button>
-  <div class='modal-title'><h2><b><center>Tack It!</center></b></h2></div>
+  <div class='modal-title'><h2><b><center>+Album</center></b></h2></div>
 </div>
 
 <div class='modal-body'>
   <form action='/pinned/new' method='POST' role='form'>
     <div class = 'form-group'>
 
-      <label for='albumOption'>Add to a board</label>
+      <label for='albumOption'>Select an Exsisting Album</label>
       <select name="album_id">
         <center>
           <option></option>
@@ -27,14 +27,13 @@
 
         <input name="photo[id]" type="hidden" value=<%= locals[:photo_id] %> id ="inventory-item-id" />
 
-        <label for='albumOption'>Create a new board</label>
-        <h3> Name </h3>
+        <label for='albumOption'>+New Album</label>
         <input type='text' name='album[name]' class='form-control' placeholder="Like 'places to go' or 'recipies to make'" id='albumNewName'/>
       </div>
 
 
       <div class='modal-footer'>
-        <input type='submit' value='Tack it!' class='btn btn-primary'/>
+        <input type='submit' value='+Album' class='btn btn-primary'/>
       </div>
     </form>
   </div>

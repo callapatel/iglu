@@ -11,7 +11,6 @@ class Photo < ActiveRecord::Base
     3.times do
       @lovely = response.parsed_response["data"]
       @lovely.each do |n|
-
         welcome = n['images']['standard_resolution']['url']
         if n['location']
           location_name = n['location']['name']

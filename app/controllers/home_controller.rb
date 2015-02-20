@@ -13,6 +13,7 @@ class HomeController < ApplicationController
     else
       @user = User.createuser_from_omniauth(auth_hash)
       session[:user_id] = @user.id
+      current_user = User.find(session[:user_id])
       token = auth_hash["credentials"]['token']
       Photo.api_call_to_db_update(token, current_user.id)
     end
@@ -24,6 +25,7 @@ class HomeController < ApplicationController
     this_user_atm = current_user.id #session[:user_id]
     if require_login
       if this_user_atm.present?
+        #@photos = Photo.all
         @photos = Photo.paginate(:page => params[:page], :per_page => 30)
         #Photo.api_call_to_db_update(token, this_user_atm)
         #Photo.yelp
