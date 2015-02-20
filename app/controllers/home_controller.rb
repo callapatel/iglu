@@ -14,7 +14,7 @@ class HomeController < ApplicationController
       @user = User.createuser_from_omniauth(auth_hash)
       session[:user_id] = @user.id
       token = auth_hash["credentials"]['token']
-      Photo.api_call_to_db_update(token, @user.id)
+      Photo.api_call_to_db_update(token, current_user.id)
     end
     redirect_to root_path
   end
