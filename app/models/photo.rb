@@ -32,7 +32,7 @@ class Photo < ActiveRecord::Base
   end
 
   def self.api_calling
-    puts "running this method for instagram  " + Time.now
+    puts "running this method for instagram  "
     User.all.each do |user|
       token = user.token
       this_user_atm = user.id
@@ -62,9 +62,9 @@ class Photo < ActiveRecord::Base
 
 
 
-  def self.google(this_user_atm)
-    puts "googleit" + Time.now
-    Photo.where(user: this_user_atm).each do |n|
+  def self.google
+    puts "googleit"
+    Photo.each do |n|
       @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY'])
       if n.lat == "" or n.lat == nil
         @hope1 = ""
@@ -77,7 +77,7 @@ class Photo < ActiveRecord::Base
   end
 
   def self.yelp
-    puts 'running yelp here' + Time.now 
+    puts 'running yelp here'
 
     Photo.all.each do |n|
       coordinates = { latitude: n.lat, longitude: n.long}
@@ -101,11 +101,6 @@ class Photo < ActiveRecord::Base
   end
 
 
-  def self.test
-    ENV.each do |env|
-        puts env
-    end
-  end
 
 
 
