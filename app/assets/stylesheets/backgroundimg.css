@@ -1,4 +1,7 @@
 .backing {
-  height: 200px;
-  width: 200px; 
+  position: relative;
+  display: table;
+  /*height: 50em;*/
+  width: 100%;
+  table-layout: fixed;
 }

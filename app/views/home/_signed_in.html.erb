@@ -7,13 +7,12 @@
         <span class="nav-text">
           <% number = Photo.all.where(user: current_user.id).count %>
           Welcome <%=current_user.name %></br></br>
-          <ol>
-            <li>Number of photos:</br></li>
-            <li><%= number%>  </li></br>
+            #Photos:
+            <%= number%></br>
             <%count= Album.where(uid: current_user.id).count %>
-            <li>Number of albums:</br></li>
-            <li><%= count %></li>
-            </ol>
+            #Albums:
+            <%= count %>
+
         </span>
       </a>
 
