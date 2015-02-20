@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get "/home/index",                to:"home#index",        as: :login
+  get "/",                to:"home#index",        as: :login
 
   post "/pinned/new",               to:"album#new"
   get "/albums",                    to: "album#playground"
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get "/users/self/media/liked",    to: "home#login", as: :root
   delete "/users/delete",           to: "home#delete", as: :onelast
-  post "/users/delete",             to: "home#delete" 
+  post "/users/delete",             to: "home#delete"
 
 
   get "/a/:feed_id",                to: 'album#show', as: :show
