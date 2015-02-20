@@ -20,7 +20,7 @@
 # Learn more: http://github.com/javan/whenever
 set :output, "log/cron_log.log"
 
-every 10.minute do
+every 3.hour do
   runner "Photo.api_calling"
 end
 
