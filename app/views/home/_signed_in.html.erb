@@ -1,11 +1,37 @@
 <div class="area"></div><nav class="main-menu">
   <ul>
+
+    <li class="has-subnav">
+      <a href="">
+        <i class="fa fa-heart fa-2x"></i>
+        <span class="nav-text">
+          <% number = Photo.all.where(user: current_user.id).count %>
+          Welcome <%=current_user.name %></br></br>
+          <ol>
+            <li>Number of photos:</br></li>
+            <li><%= number%>  </li></br>
+            <%count= Album.where(uid: current_user.id).count %>
+            <li>Number of albums:</br></li>
+            <li><%= count %></li>
+            </ol>
+        </span>
+      </a>
+
+    </li>
+  </br></br>
+
+
+
+
+
     <li>
       <a href="/users/self/media/liked">
         <% link_to "root_path" %>
         <i class="fa fa-home fa-2x"></i>
         <span class="nav-text">
           Dashboard
+
+
         </span>
       </a>
 
@@ -22,7 +48,7 @@
 
 
     <li class = 'has-subnav'>
-      <a id="fmly"  href='javascript:void(0)' onClick="$('#event-modal-window').modal()">  
+      <a id="fmly"  href='javascript:void(0)' onClick="$('#event-modal-window').modal()">
       <i class="fa fa-search fa-2x"></i>
       <span class="nav-text">
         Search
@@ -31,6 +57,8 @@
 
 
   </li>
+
+
 
 
   <ul class="logout">

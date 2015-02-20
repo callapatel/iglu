@@ -169,3 +169,7 @@ p {
   font-family: 'Oleo Script', cursive;
   color: pink;
   }
+
+  .floater{
+    float: right; 
+  }

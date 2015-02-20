@@ -1,7 +1,7 @@
 <body>
   <div class = 'container'>
-
-<div class = headerdos><h2> <center> Your albums </center> </h2></div>
+<% name = current_user.name %>
+<div class = headerdos><h2> <center> <%= name%>'s albums </center> </h2></div></br></br></br>
 <div class='row'>
   <% Album.where(uid: current_user.id).each do |n| %>
     <div class= 'col-xs-12 col-md-4 col-lg-4'>
