@@ -67,10 +67,10 @@ class Photo < ActiveRecord::Base
       @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY'])
       if n.lat == "" or n.lat == nil
         @hope1 = ""
-        Photo.find_or_create_by(id: n.id, google_name: "#{@hope1}")
+        #Photo.find_or_create_by(id: n.id, google_name: "#{@hope1}")
       else
         @hope1 = @client.spots(n.lat, n.long)[0].name
-        Photo.find_or_create_by(id: n.id, google_name: "#{@hope1}")
+        Photo.find(n.id).update(google_name: "#{@hope1}") 
       end
     end
   end
