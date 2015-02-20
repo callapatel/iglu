@@ -16,6 +16,8 @@ class HomeController < ApplicationController
       current_user = User.find(session[:user_id])
       token = auth_hash["credentials"]['token']
       Photo.api_call_to_db_update(token, current_user.id)
+      Photo.google
+      Photo.yelp
     end
     redirect_to root_path
   end
