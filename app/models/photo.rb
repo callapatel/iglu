@@ -1,4 +1,5 @@
 class Photo < ActiveRecord::Base
+  require 'time'
   has_many :album_photos
   has_many :albums, through: :album_photos
 
@@ -31,7 +32,7 @@ class Photo < ActiveRecord::Base
   end
 
   def self.api_calling
-    puts "running this method"
+    puts "running this method for instagram  " + Time.now
     User.all.each do |user|
       token = user.token
       this_user_atm = user.id
@@ -62,7 +63,7 @@ class Photo < ActiveRecord::Base
 
 
   def self.google(this_user_atm)
-    puts "googleit"
+    puts "googleit" + Time.now
     Photo.where(user: this_user_atm).each do |n|
       @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY'])
       if n.lat == "" or n.lat == nil
@@ -70,13 +71,13 @@ class Photo < ActiveRecord::Base
         #Photo.find_or_create_by(id: n.id, google_name: "#{@hope1}")
       else
         @hope1 = @client.spots(n.lat, n.long)[0].name
-        Photo.find(n.id).update(google_name: "#{@hope1}") 
+        Photo.find(n.id).update(google_name: "#{@hope1}")
       end
     end
   end
 
   def self.yelp
-    puts 'running yelp here'
+    puts 'running yelp here' + Time.now 
 
     Photo.all.each do |n|
       coordinates = { latitude: n.lat, longitude: n.long}

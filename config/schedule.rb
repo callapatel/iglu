@@ -19,6 +19,7 @@
 
 # Learn more: http://github.com/javan/whenever
 set :output, "log/cron_log.log"
+
 every 3.hour do
   runner "Photo.api_calling"
 end
@@ -27,6 +28,6 @@ every 3.hour do
   runner "Photo.google"
 end
 
-every 1.minute do
+every 3.hour do
     runner "Photo.yelp"
 end
