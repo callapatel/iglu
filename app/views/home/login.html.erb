@@ -3,7 +3,9 @@
   <div class = headerdos floater><h2>Like </h2></div></br>
   <% @photos.where(user: current_user.id).in_groups_of(3).each do |photo|%>
   <div class="row">
+
     <% photo.each do |n| %>
+    <% if n != nil %>
     <!-- <%# cache(n) do %> -->
     <div class= 'col-xs-12 col-md-4 col-lg-4'>
       <div class='class' data-id="<%= @yay = n.id %>">
@@ -77,7 +79,7 @@
       </div>
     </div>
   </div>
-
+  <% end %>
   <% end %>
 
 </div>

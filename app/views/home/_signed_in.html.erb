@@ -9,7 +9,7 @@
           Welcome <%=current_user.name %></br></br>
             #Photos:
             <%= number%></br>
-            <%count= Album.where(uid: current_user.id).count %>
+            <% count= Album.where(uid: current_user.id).count %>
             #Albums:
             <%= count %>
 
