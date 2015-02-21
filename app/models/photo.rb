@@ -8,7 +8,7 @@ class Photo < ActiveRecord::Base
 
   def self.api_call_to_db_update(token, this_user_atm)
     response = HTTParty.get("https://api.instagram.com/v1/users/self/media/liked?access_token=#{token}&count=200&max_id=123456")
-    3.times do
+    8.times do
       @lovely = response.parsed_response["data"]
       @lovely.each do |n|
         welcome = n['images']['standard_resolution']['url']
