@@ -4,21 +4,24 @@
 <div class = headerdos><h2> <center> <%= name%>'s albums </center> </h2></div></br></br></br>
 <div class='row'>
   <% Album.where(uid: current_user.id).each do |n| %>
-    <div class= 'col-xs-12 col-md-4 col-lg-4'>
+    <div class= 'col-xs-12 col-md-12 col-lg-4'>
       <div class = 'class albumview'>
         <% @albumnames = n.a_name %>
         <% yaya = AlbumPhoto.find_by(uid: current_user.id, album_id: @albumnames).photo_id%>
         <% @y = Photo.find(yaya).url %>
-        <div class = 'polaroid'>
-          <%= image_tag(@y)%> </br></br></br></br></br></br></br></br></br></br></br></br>
 
+        <div class = 'polaroid'>
+          <div class = 'row'>
+            <div class = 'col-xs-12 col-md-4 col-lg-12'>
+          <%= image_tag(@y)%> </br></br></br></br></br></br></br></br></br></br></br></br>
+        </div></div>
 
 
         </div>
-        <div class='albumnamelink'><h3><center><%= link_to @albumnames , show_path(feed_id: @albumnames)%></center></h3></div>
+        <div class='albumnamelink' style= 'font-size: 16px'><%= link_to @albumnames , show_path(feed_id: @albumnames)%></div>
 
-
-        <%= button_to '-Album', delete_path(feed_id: @albumnames), {class: 'deletealbum delete'}%>
+      </br></br>
+        <%= button_to '-Album', delete_path(feed_id: @albumnames), {class: 'btn btn-primary deletealbum delete '}%>
 
 
 

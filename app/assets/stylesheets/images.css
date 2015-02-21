@@ -156,11 +156,11 @@ ul.rig.columns-4 li {
 }
 
 .albumnamelink a{
-  color: blue;
+  color: black;
 }
 
 .albumnamelink visited {
-  color: blue;
+  color: black;
 }
 
 /* mouse over link */
@@ -170,12 +170,12 @@ ul.rig.columns-4 li {
 
 /* selected link */
 .albumnamelink active {
-  color: blue;
+  color: black;
 }
 
 .deletealbum{
   width: 90px;
-  height: 20px;
+  height: 35px;
   background-color: white;
   color: blue;
   border: 1px solid transparent;
