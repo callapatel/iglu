@@ -26,7 +26,7 @@ h3,
 h4,
 h5,
 h6 {
-  text-transform: uppercase;
+  text-transform: lowercase;
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
 }
@@ -41,7 +41,7 @@ h6 {
 
 .btn-primary {
   border-color: #fed136;
-  text-transform: uppercase;
+  /*text-transform: lowercase;*/
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
   color: #fff;
@@ -92,7 +92,7 @@ fieldset[disabled] .btn-primary.active {
   padding: 20px 40px;
   border-color: #fed136;
   border-radius: 3px;
-  text-transform: uppercase;
+  /*text-transform: lowercase;*/
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -176,7 +176,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .nav li a {
-  text-transform: uppercase;
+  /*text-transform: lowercase;*/
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 400;
   letter-spacing: 1px;
@@ -260,7 +260,7 @@ header .intro-text .intro-lead-in {
 
 header .intro-text .intro-heading {
   margin-bottom: 25px;
-  text-transform: uppercase;
+  text-transform: lowercase;
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 50px;
   font-weight: 700;
@@ -283,7 +283,7 @@ header .intro-text .intro-heading {
 
   header .intro-text .intro-heading {
     margin-bottom: 50px;
-    text-transform: uppercase;
+    /*text-transform: lowercase;*/
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 75px;
     font-weight: 700;
@@ -312,7 +312,7 @@ section h3.section-subheading {
 
 @media(min-width:768px) {
   section {
-    /*padding: 150px 0;*/
+
   }
 }
 
@@ -585,28 +585,28 @@ section#contact .form-control:focus {
 }
 
 section#contact::-webkit-input-placeholder {
-  text-transform: uppercase;
+  /*text-transform: lowercase;*/
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
   color: #bbb;
 }
 
 section#contact:-moz-placeholder {
-  text-transform: uppercase;
+  /*text-transform: lowercase;*/
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
   color: #bbb;
 }
 
 section#contact::-moz-placeholder {
-  text-transform: uppercase;
+  /*text-transform: lowercase;*/
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
   color: #bbb;
 }
 
 section#contact:-ms-input-placeholder {
-  text-transform: uppercase;
+  /*text-transform: lowercase;*/
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
   color: #bbb;
@@ -622,7 +622,7 @@ footer {
 }
 
 footer span.copyright {
-  text-transform: uppercase;
+  /*text-transform: lowercase;*/
   text-transform: none;
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   line-height: 40px;
@@ -630,7 +630,7 @@ footer span.copyright {
 
 footer ul.quicklinks {
   margin-bottom: 0;
-  text-transform: uppercase;
+  /*text-transform: lowercase;*/
   text-transform: none;
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   line-height: 40px;
