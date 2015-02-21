@@ -1,7 +1,7 @@
 <div class="container">
   <% name = current_user.name %>
   <div class = headerdos floater><h2>Like </h2></div></br>
-  <% @photo = @photos.order(created_at: :asc) %>
+  <% @photo = @photos.order(id: :asc) %>
   <% @photo.where(user: current_user.id).in_groups_of(3).each do |photo|%>
   <div class="row">
 
@@ -36,7 +36,8 @@
           Google Location is unavailable.</br>
         <% end %>
         </br>
-
+        <div class = 'row for-buttons'>
+          <div class= 'col-xs-12 col-md-12 col-lg-12'>
         <% n.yelp_url %>
         <% if n.yelp_url != "" && n.yelp_url != nil%>
         <a href="<%= n.yelp_url %>">
@@ -63,7 +64,8 @@
               +Album
             </button>
           </a>
-
+        </div>
+</div>
           <div id='modal-window-<%=n.id%>' class='modal fade' id="addListItem" role='dialog' aria-labelledby='myModalLabel' aria-hidden
           ='true' >
           <div class='modal-dialog'>

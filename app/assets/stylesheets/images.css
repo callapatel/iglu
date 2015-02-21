@@ -109,12 +109,12 @@ ul.rig.columns-4 li {
 .prettyblue {
   background-color: white;
   color: blue;
-  padding: 8px 90px;
+  padding: 8px 60px;
 }
 
 .yelpbutton {
   border: 1px solid transparent;
-  padding: 3px 3px;
+  padding: 3px 1px;
   background-color: white;
   color: blue;
   /*width: 40px;
@@ -199,4 +199,9 @@ ul.rig.columns-4 li {
 
 .sizeing{
   max-height: 500px
+}
+
+.for-buttons {
+  margin-right: -7px;
+  margin-left: -7px;
 }
