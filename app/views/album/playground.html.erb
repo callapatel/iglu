@@ -1,16 +1,16 @@
 <body>
   <div class = 'container'>
 <% name = current_user.name %>
-<div class = headerdos><h2> <center> <%= name%>'s albums </center> </h2></div></br></br></br>
+<div class = headerdos><h2> <center> albums </center> </h2></div></br></br></br>
 <div class='row'>
   <% Album.where(uid: current_user.id).each do |n| %>
-    <div class= 'col-xs-12 col-md-12 col-lg-4'>
+    <div class= 'col-xs-4 col-md-12 col-lg-4'>
       <div class = 'class albumview'>
         <% @albumnames = n.a_name %>
         <% yaya = AlbumPhoto.find_by(uid: current_user.id, album_id: @albumnames).photo_id%>
         <% @y = Photo.find(yaya).url %>
 
-        <div class = 'polaroid'>
+        <div class = 'polaroid hidden-sm hidden-xs hidden-md'>
           <div class = 'row'>
             <div class = 'col-xs-12 col-md-4 col-lg-12'>
           <%= image_tag(@y)%> </br></br></br></br></br></br></br></br></br></br></br></br>
