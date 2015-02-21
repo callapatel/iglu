@@ -63,7 +63,7 @@ class Photo < ActiveRecord::Base
 
   def self.google
     puts "googleit"
-    Photo.each do |n|
+    Photo.all.each do |n|
       @client = GooglePlaces::Client.new(ENV['GOOGLE_KEY'])
       if n.lat == "" or n.lat == nil
         @hope1 = ""
