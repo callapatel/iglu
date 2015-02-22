@@ -1,7 +1,7 @@
 <div class="container">
   <% name = current_user.name %>
   <div class = headerdos floater><h2>Like </h2></div></br>
-  <% @photo = Photo.all.where(user: current_user.id).order(created_at: :desc).distinct %>
+  <% @photo = Photo.all.where(user: current_user.id).order(created_at: :asc).distinct %>
   <% #@photo = @photos.order(created_at: :desc) %>
   <% @photo.in_groups_of(3).each do |photo|%>
   <div class="row">
