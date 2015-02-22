@@ -1,5 +1,6 @@
 <div class ='container'>
   <div class = 'row'>
+    <div class = headerdos floater><h2>Results </h2></div></br>
     <% if @articles.where(user: current_user.id).count == 0 %>
     <%= "Sorry, you don't have any photos with that location information" %>
     <% else %>
@@ -11,6 +12,7 @@
         <b><%= article.ig_user %></b></br>
         <%= article.google_name %></br>
         <%= article.loc_name %></br>
+        <div class ='commentfrominsta'>
         <%= article.caption %>
 
         <div class='actions'>
@@ -38,6 +40,7 @@
 
         </div>
       </div>
+    </div>
     </div>
 
 
