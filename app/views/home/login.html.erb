@@ -1,8 +1,9 @@
 <div class="container">
   <% name = current_user.name %>
   <div class = headerdos floater><h2>Like </h2></div></br>
-  <% @photo = @photos.order(id: :asc) %>
-  <% @photo.where(user: current_user.id).in_groups_of(3).each do |photo|%>
+  <% @photo = Photo.all.where(user: current_user.id).order(created_at: :desc) %>
+  <% #@photo = @photos.order(created_at: :desc) %>
+  <% @photo.in_groups_of(3).each do |photo|%>
   <div class="row">
 
     <% photo.each do |n| %>
